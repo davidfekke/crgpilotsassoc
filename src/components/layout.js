@@ -1,12 +1,10 @@
 import React from "react"
-import svglogo from "../../capa.logo.svg"
+import "./layout.css"
 
-export default ({children}) => (
-  <div style={{ color: `teal` }}>
-    <h1>About Craig Pilots Association</h1>
-    <img src={svglogo} alt="Craig Airport Pilots Association" />
-    <div>
-        {children}
-    </div>
-  </div>
-)
+export default ({children}) => {
+    return (
+        <div style={{ fontFamily: 'Open Sans, Helvetica', margin: '0px 0px 0px 0px' }}>
+            {children}
+        </div>
+    )
+}

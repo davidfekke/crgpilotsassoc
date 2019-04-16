@@ -8,8 +8,8 @@ import styles from "./navbar.module.css"
 const menuData = [
     { title: 'Home', link: ''},
     { title: 'News', link: 'news' },
-    { title: 'About', link: 'about' },
-    { title: 'Contact', link: 'contact' }
+    { title: 'Services', link: 'services' },
+    { title: 'About', link: 'about' }
 ];
 
 const MenuItem = props => (

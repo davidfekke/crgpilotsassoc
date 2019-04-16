@@ -68,9 +68,6 @@ export default () => {
                                 <li>
                                     <Link to={`terms`}>Terms and Conditions</Link>
                                 </li>
-                                <li>
-                                    <a href="/rss.xml">RSS Feed</a>
-                                </li>
                             </ul>
                         </div>    
                     </nav>

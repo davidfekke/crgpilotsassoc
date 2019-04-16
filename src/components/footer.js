@@ -2,7 +2,7 @@ import React from "react"
 import Container from "./container.js"
 import { Link } from "gatsby"
 import ExtLink from "./extlink"
-//import { FaTwitter, FaFacebook, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa'; // FaTwitter, FaLinkedin, FaGithub, FaYoutube
 import footerStyles from "./footer.module.css"
 
 export default () => {
@@ -10,13 +10,12 @@ export default () => {
         <footer style={{ backgroundColor: '#868e96', marginTop: '2rem'}}>
             <Container>
                 <div style={{ paddingTop: '1rem', paddingBottom: '2rem' }}>
-                    {/* <div style={{ textAlign: 'center', height: '3rem', paddingTop: '20px', paddingBottom: '10px',  }}>
-                        <a href="https://twitter.com/davidfekke" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaTwitter size={32} style={{ padding: '5px' }} /></a>
-                        <a href="https://www.facebook.com/David-Fekke-LLC-178889285498948/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaFacebook size={32}  style={{ padding: '5px' }} /> </a>
-                        <a href="https://www.linkedin.com/in/david-fekke-1913ba2/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaLinkedin size={32}  style={{ padding: '5px' }} /></a> 
+                    <div style={{ textAlign: 'center', height: '3rem', paddingTop: '20px', paddingBottom: '10px',  }}>
+                        <a href="https://www.facebook.com/groups/849967972062524/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaFacebook size={32}  style={{ padding: '5px' }} /> </a>
+                        {/* <a href="https://www.linkedin.com/in/david-fekke-1913ba2/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaLinkedin size={32}  style={{ padding: '5px' }} /></a> 
                         <a href="https://github.com/davidfekke/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaGithub size={32}  style={{ padding: '5px' }} /></a>
-                        <a href="https://www.youtube.com/davidfekke/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaYoutube size={32}  style={{ padding: '5px' }} /></a>
-                    </div> */}
+                        <a href="https://www.youtube.com/davidfekke/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}><FaYoutube size={32}  style={{ padding: '5px' }} /></a> */}
+                    </div>
                     <nav className={footerStyles.gridarea}>
                         <div>
                             <ul>
@@ -24,35 +23,24 @@ export default () => {
                                     <strong>Connect</strong>
                                 </li>
                                 <li>
-                                    <Link to="blog">Blog</Link>
+                                    <Link to="news">News</Link>
                                 </li>
                                 <li>
-                                    <ExtLink uri="https://twitter.com/davidfekke" name="Twitter" />
+                                <a href="https://www.facebook.com/groups/849967972062524/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}>Facebook</a>
                                 </li>
-                                <li>
-                                    <ExtLink uri="https://www.linkedin.com/in/david-fekke-1913ba2/" name="Linkedin" />
-                                </li>
-                                <li>
-                                    <ExtLink uri="https://www.youtube.com/davidfekke/" name="Youtube" />    
-                                </li>
+                                
                             </ul>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <strong>Products</strong>
+                                    <strong>Resources</strong>
                                 </li>
                                 <li>
-                                    <Link to="/products/idogyears">iDogYears</Link>
+                                    <ExtLink uri="https://www.faa.com" name="FAA" />
                                 </li>
                                 <li>
-                                    <Link to="/products/ilottonum">iLottoNum</Link>
-                                </li>
-                                <li>
-                                    <Link to="/products/icatyears">iCatYears</Link>
-                                </li>
-                                <li>
-                                    <Link to="/products/jaxnode">JaxNode App</Link>
+                                    <ExtLink uri="https://www.1800wxbrief.com/Website/#!/" name="1-800-WX-BRIEF" />
                                 </li>
                             </ul>                            
                         </div>
@@ -62,16 +50,10 @@ export default () => {
                                     <strong>Sites</strong>
                                 </li>
                                 <li>
-                                    <ExtLink uri="https://www.jaxtechmeetups.com" name="Jax Tech Meetups" />
+                                    <ExtLink uri="http://www.flyjacksonville.com/Home.aspx?sMP=JAA" name="Jax Aviation Authority" />
                                 </li>
                                 <li>
-                                    <ExtLink uri="https://www.jaxnode.com" name="JaxNode" />
-                                </li>
-                                <li>
-                                    <ExtLink uri="https://www.swyftmobile.com" name="Swyft Mobile" />
-                                </li>
-                                <li>
-                                    <ExtLink uri="https://www.github.com/davidfekke" name="Github" />
+                                    <ExtLink uri="http://www.flyjacksonville.com/Home.aspx?sMP=JAXEX" name="JAXEX" />
                                 </li>
                             </ul>
                         </div>
@@ -79,9 +61,6 @@ export default () => {
                             <ul>
                                 <li>
                                     <strong>Pages</strong>
-                                </li>
-                                <li>
-                                    <Link to={`contact`}>Contact</Link>
                                 </li>
                                 <li>
                                     <Link to={`about`}>About</Link>

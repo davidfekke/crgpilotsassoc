@@ -6,107 +6,133 @@ import Logo from "./capa.logo.svg"
 import styles from "./navbar.module.css"
 
 const menuData = [
-    { title: 'Home', link: ''},
+    { title: 'Home', link: '' },
     { title: 'News', link: 'news' },
     { title: 'Services', link: 'services' },
-    { title: 'About', link: 'about' }
+    { title: 'About', link: 'about' },
+    { title: 'Resources', link: 'resources' }
 ];
 
-const MenuItem = props => (
-    <li className={ styles.navbar }> 
-        <Link style={{ padding: '0.8rem', 
+const MenuItem = props => ( 
+    <li className = { styles.navbar } >
+        <Link style = {{
+            padding: '0.8rem',
             textDecoration: 'none',
             color: 'black',
             textTransform: 'uppercase',
-            fontWeight: 'bold' }} to={props.link}>{props.title}</Link>
+            fontWeight: 'bold'
+        }} to = { props.link } > { props.title } </Link>
     </li>
 )
 
 class Navbar extends React.Component {
-    constructor(props) {
-        super(props);
+        constructor(props) {
+            super(props);
 
-        let startingWidth = '1160px';
-        if (typeof window !== 'undefined') {
-            startingWidth = window.innerWidth + 'px';
-        }
+            let startingWidth = '1160px';
+            if (typeof window !== 'undefined') {
+                startingWidth = window.innerWidth + 'px';
+            }
 
-        this.state = {
-            logoHeight: '40px',
-            hamburgerTop: '11px',
-            windowwidth: startingWidth
-        };
-        
-        this.handleScroll = this.handleScroll.bind(this);
-        this.handleResize = this.handleResize.bind(this);
-    }
-    
-    handleScroll(event) {
-        if (document.documentElement.scrollTop > 80) {
-            this.setState({ 
-                logoHeight: '22px',
-                hamburgerTop: '6px'
-             });
-        } else {
-            this.setState({ 
+            this.state = {
                 logoHeight: '40px',
-                hamburgerTop: '11px'
-            });
-        }
-    }
+                hamburgerTop: '11px',
+                windowwidth: startingWidth
+            };
 
-    handleResize(event) {
-        const width = event.target.innerWidth;
-        this.setState({ windowwidth: width + 'px' });
-        let linksEl = document.querySelector('nav');
-        if (width > 768 && linksEl.style.display === 'none') {
-            linksEl.style.display = 'block';
+            this.handleScroll = this.handleScroll.bind(this);
+            this.handleResize = this.handleResize.bind(this);
         }
-    }
 
-    componentDidMount() {
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', this.handleScroll);
-            window.addEventListener('resize', this.handleResize);
+        handleScroll(event) {
+            if (document.documentElement.scrollTop > 80) {
+                this.setState({
+                    logoHeight: '22px',
+                    hamburgerTop: '6px'
+                });
+            } else {
+                this.setState({
+                    logoHeight: '40px',
+                    hamburgerTop: '11px'
+                });
+            }
         }
-    }
 
-    componentWillUnmount() {
-        if (typeof window !== 'undefined') {
-            window.removeEventListener('scroll', this.handleScroll, false);
-            window.removeEventListener('resize', this.handleResize, false);
+        handleResize(event) {
+            const width = event.target.innerWidth;
+            this.setState({ windowwidth: width + 'px' });
+            let linksEl = document.querySelector('nav');
+            if (width > 768 && linksEl.style.display === 'none') {
+                linksEl.style.display = 'block';
+            }
         }
-    }
-    
-    burgerToggle() {
-        let linksEl = document.querySelector('nav');
-        if (linksEl.style.display === 'block') {
-            linksEl.style.display = 'none';
-        } else {
-            linksEl.style.display = 'block';
+
+        componentDidMount() {
+            if (typeof window !== 'undefined') {
+                window.addEventListener('scroll', this.handleScroll);
+                window.addEventListener('resize', this.handleResize);
+            }
         }
-    }
 
-    render() {
-        return (<div className={styles.mainNavElement}>
-            <Container>
-                <div className={styles.navbarlogo}>
-                    <Link to="/"><img src={Logo} alt="Logo" style={{ height: `${this.state.logoHeight}` }} /></Link>
-                </div>
-                <nav>
-                    <ul style={{ display: 'block', 
-                        float: 'left',
-                        listStyle: 'none',
-                        padding: '0px' }}>
-                        {menuData.map(item => ( <MenuItem key={item.title} title={item.title} link={item.link} /> ))}
-                    </ul>
-                </nav>  
-                <div className={styles.hamburger} style={{ top: `${this.state.hamburgerTop}`}}>
-                    <FaBars size={32}  style={{ padding: '5px' }} onClick={this.burgerToggle} />
-                </div>          
-            </Container>
-        </div>)
-    }
-}
+        componentWillUnmount() {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('scroll', this.handleScroll, false);
+                window.removeEventListener('resize', this.handleResize, false);
+            }
+        }
 
-export default Navbar;
+        burgerToggle() {
+            let linksEl = document.querySelector('nav');
+            if (linksEl.style.display === 'block') {
+                linksEl.style.display = 'none';
+            } else {
+                linksEl.style.display = 'block';
+            }
+        }
+
+        render() {
+                return ( < div className = { styles.mainNavElement } >
+                        <
+                        Container >
+                        <
+                        div className = { styles.navbarlogo } >
+                        <
+                        Link to = "/" > < img src = { Logo }
+                        alt = "Logo"
+                        style = {
+                            { height: `${this.state.logoHeight}` } }
+                        /></Link >
+                        <
+                        /div> <
+                        nav >
+                        <
+                        ul style = {
+                            {
+                                display: 'block',
+                                float: 'left',
+                                listStyle: 'none',
+                                padding: '0px'
+                            }
+                        } > {
+                            menuData.map(item => ( < MenuItem key = { item.title }
+                                    title = { item.title }
+                                    link = { item.link }
+                                    /> ))} <
+                                    /ul> <
+                                    /nav>   <
+                                    div className = { styles.hamburger }
+                                    style = {
+                                        { top: `${this.state.hamburgerTop}` } } >
+                                    <
+                                    FaBars size = { 32 }
+                                    style = {
+                                        { padding: '5px' } }
+                                    onClick = { this.burgerToggle }
+                                    /> <
+                                    /div>           <
+                                    /Container> <
+                                    /div>)
+                                }
+                            }
+
+                            export default Navbar;

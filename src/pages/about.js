@@ -18,6 +18,7 @@ export default () => (
                 The purpose of the Craig Airport Pilots Association is to help build a community of people interested in Craig Airport and Flying.
                 We also want to help share information about Airport operations, Social events and Flying in General. 
             </p>
+            <img src={withPrefix('1922_Craig_LB.jpg')} alt="Lt. Commander James E. Craig" style={{ width: 'auto' }}/>
             <p>
                 Craig, now known as Jacksonville Executive at Craig Airport (JAXEX), was originally built in the 1940s, 
                 one of six airports in the area developed for military training. 

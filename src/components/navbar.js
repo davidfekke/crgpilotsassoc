@@ -7,7 +7,6 @@ import styles from "./navbar.module.css"
 
 const menuData = [
     { title: 'Home', link: '' },
-    { title: 'News', link: 'news' },
     { title: 'Services', link: 'services' },
     { title: 'About', link: 'about' },
     { title: 'Resources', link: 'resources' }

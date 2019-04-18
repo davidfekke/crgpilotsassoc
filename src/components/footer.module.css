@@ -4,6 +4,7 @@
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 20px;
     align-items: center;
+    color: white;
 }
 
 .gridarea > div > ul {
@@ -14,11 +15,12 @@
 
 .gridarea > div > ul > li {
     margin: 0.75rem;
+    color: white;
 }
 
 .gridarea > div > ul > li > a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 @media (max-width: 768px) {

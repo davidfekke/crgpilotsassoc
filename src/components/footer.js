@@ -24,7 +24,7 @@ export default () => {
                                     <strong > Connect </strong> 
                                 </li> 
                                 <li >
-                                    <Link to = "news" > News </Link> 
+                                    <Link to = {'/'} > News </Link> 
                                 </li> 
                                 <li>
                                     <a href = "https://www.facebook.com/groups/849967972062524/" target = "_blank" rel = "noopener noreferrer" style = {{ textDecoration: 'none' }} > Facebook </a> 

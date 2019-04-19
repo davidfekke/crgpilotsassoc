@@ -68,7 +68,7 @@ class Resources extends React.Component {
                 <h1>Resources</h1>
                 <p>Here are some great resources available to pilots.</p>
                 <h3>Weather</h3>
-                    Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`}}> {this.state.currentweather}</span><br />
+                    Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
                     Altimeter: {this.state.altim}<br />
                     Wind Direction: {this.state.wind_dir}<br />
                     Wind Speed: {this.state.wind_speed}<br />

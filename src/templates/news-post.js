@@ -33,7 +33,7 @@ export default class BlogPost extends React.Component {
                 <div dangerouslySetInnerHTML={{ __html: post.html }}/>{" "} 
                 {prev && (<Link to={`news/${prev.fields.slug}`} > ←Previous Page </Link>)} 
                 {" "} 
-                {next && <span > &nbsp; </span>}{" "} 
+                {next && <span> &nbsp; </span>}{" "} 
                 {next && <Link to={`news/${next.fields.slug}`}> Next Page→ </Link>}{" "} 
                 </Article> {" "} 
                 <Footer />

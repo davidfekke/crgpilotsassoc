@@ -13,7 +13,7 @@ export default class BlogList extends React.Component {
     const { currentPage, numPages } = this.props.pageContext;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
-    const prevPage = currentPage - 1 === 1 ? '/news/' : `/news/${(currentPage - 1).toString()}`;
+    const prevPage = currentPage - 1 === 1 ? '/' : `/news/${(currentPage - 1).toString()}`;
     const nextPage = `/news/${(currentPage + 1).toString()}`;
 
     return (

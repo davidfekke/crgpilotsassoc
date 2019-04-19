@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar.js"
-import Header from "../components/normalheader.js"
+import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 import Article from "../components/article.js"
 import MainHelmet from "../components/helmet.js"
@@ -20,16 +20,20 @@ export default class BlogList extends React.Component {
       <Layout>
         <MainHelmet />
         <Navbar />
-        <Header headline="News" />
+        <Header />
         <Article>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
+            let HeaderImage;
+            if (node.frontmatter.cover_image !== undefined && node.frontmatter.cover_image !== null && node.frontmatter.cover_image.publicURL !== undefined && node.frontmatter.cover_image.publicURL !== null) {
+                HeaderImage = node.frontmatter.cover_image.publicURL;
+            }
             return (<div key={node.fields.slug}>
                     <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
-                        <Link to={`blog${node.fields.slug}`} style={{ textShadow: '2px 2px 5px black', textDecoration: 'none', color: 'orange'}}>{title}</Link>
+                        <Link to={`news${node.fields.slug}`} style={{ textDecoration: 'none', color: 'black' }}>{title}</Link>
                     </div>
-                    <div>{node.excerpt}</div> 
-                    <div><em>Time to read: {node.timeToRead || 1} minute.</em></div> 
+                    {HeaderImage && <img src={HeaderImage} alt="Feature" />}
+                    <div dangerouslySetInnerHTML={{ __html: node.html}} />
                 </div>)
           })}
           <div style={{ margin: '0px 100px 30px 100px'}}>
@@ -66,7 +70,11 @@ export const blogListQuery = graphql`
           }
           frontmatter {
             title
+            cover_image {
+              publicURL
+            }
           }
+          html
           excerpt
           timeToRead
         }

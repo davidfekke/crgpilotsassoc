@@ -42,7 +42,7 @@ export default class BlogList extends React.Component {
                 ← Previous Page
               </Link>
             )}
-            {!isLast && <span>&nbsp;</span>}
+            {!isFirst && !isLast && <span>&nbsp;</span>}
             {!isLast && (
               <Link to={nextPage} rel="next">
                 Next Page →

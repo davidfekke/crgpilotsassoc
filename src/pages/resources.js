@@ -21,15 +21,28 @@ class Resources extends React.Component {
             visibility: 0,
             temp: 0,
             dew: 0,
-            avwxcolor: 'black'
+            avwxcolor: 'black',
+            raw_text: '',
+            forecast: [],
+            forecast_raw_text: ''
         };
+
+        this.buttonRefresh = this.buttonRefresh.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
     
     componentDidMount() {
         //https://avwxproxy.herokuapp.com/metar/kcrg
-        axios.get('https://avwxproxy.herokuapp.com/metar/kcrg', { headers: {
-            'Access-Control-Allow-Origin': '*',
-          }}).then(results => {
+        this.refresh();
+    }
+
+    buttonRefresh(event) {
+        event.preventDefault();
+        this.refresh();
+    }
+
+    refresh() {
+        axios.get('https://avwxproxy.herokuapp.com/metar/kcrg').then(results => {
             let avwxcolor = 'black';
             switch (results.data[0].flight_category) {
                 case 'VFR':
@@ -52,11 +65,18 @@ class Resources extends React.Component {
                 visibility: results.data[0].visibility_statute_mi,
                 temp: results.data[0].temp_c,
                 dew: results.data[0].dewpoint_c,
-                avwxcolor
+                avwxcolor,
+                raw_text: results.data[0].raw_text
+            });
+        });
+
+        axios.get('http://avwxproxy.herokuapp.com/taf/kcrg').then(results => {
+            this.setState({ 
+                forecast: results.data.TAF[0].forecast,
+                forecast_raw_text: results.data.TAF[0].raw_text
             });
             
         });
-        
     }
     
     render() {
@@ -75,11 +95,34 @@ class Resources extends React.Component {
                     Wind Gust: {this.state.gust}<br />
                     Temperature: {this.state.temp} (Celcius)<br />
                     Dewpoint: {this.state.dew} (Celcius)<br />
-                    
-                    <p>
-                        <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
-                        <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
-                    </p>
+                    Raw Text: {this.state.raw_text}<br />
+                    <button style={{ fontSize: '1rem', 
+                                        borderRadius: '3px', 
+                                        backgroundColor: 'lightblue',
+                                        padding: '0.5rem',
+                                        marginTop: '1rem' }} 
+                        onClick={this.refresh}>Refresh</button><br /><br />
+
+                Forcasted weather at KCRG:<br />
+                Raw Text: {this.state.forecast_raw_text}<br /><br />
+                {this.state.forecast.map(item => {
+                    const from_date = item.fcst_time_from;
+                    const to_date = item.fcst_time_to;
+                    return (<div>
+                        From: {from_date}&nbsp;
+                        to: {to_date} <br />
+                        Wind direction: {item.wind_dir_degrees}<br />
+                        Wind speed: {item.wind_speed_kt}<br />
+                        Wind gust: {item.wind_gust_kt}<br />
+                        Visibility: {item.visibility_statute_mi}<br /> 
+                        WX: {item.wx_string}<br />
+                        Sky Condition: {item.sky_condition}<br /><br />
+                    </div>)
+                })}
+                <p>
+                    <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
+                    <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
+                </p>
                     
                 <h3>Flight Planning</h3>
                     

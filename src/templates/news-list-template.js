@@ -32,7 +32,7 @@ export default class BlogList extends React.Component {
                     <div><em>Time to read: {node.timeToRead || 1} minute.</em></div> 
                 </div>)
           })}
-          <div style={{ margin: '0px 100px 30px 100px'}}>
+          <div style={{ margin: '0px 0px 30px 0px'}}>
             {!isFirst && (
               <Link to={prevPage} rel="prev">
                 ← Previous Page

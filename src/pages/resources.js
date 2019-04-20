@@ -12,14 +12,17 @@ class Resources extends React.Component {
     constructor() {
         super();
         
-        this.state = { currentweather: '',
+        this.state = { 
+            currentweather: '',
             altim: '30.03',
             wind_dir: 0,
             wind_speed: 0,
             gust: 0,
             visibility: 0,
             temp: 0,
-            dew: 0};
+            dew: 0,
+            avwxcolor: 'black'
+        };
     }
     
     componentDidMount() {
@@ -27,6 +30,20 @@ class Resources extends React.Component {
         axios.get('https://avwxproxy.herokuapp.com/metar/kcrg', { headers: {
             'Access-Control-Allow-Origin': '*',
           }}).then(results => {
+            let avwxcolor = 'black';
+            switch (results.data[0].flight_category) {
+                case 'VFR':
+                    avwxcolor = 'green';
+                    break;
+                case 'MVFR':
+                    avwxcolor = 'blue';
+                    break;
+                case 'IFR':
+                    avwxcolor = 'red';
+                    break;
+                default:
+                    avwxcolor = 'black';
+            }
             this.setState({ currentweather: results.data[0].flight_category, 
                 altim: results.data[0].altim_in_hg, 
                 wind_dir: results.data[0].wind_dir_degrees,
@@ -34,8 +51,10 @@ class Resources extends React.Component {
                 gust: results.data[0].wind_gust_kt,
                 visibility: results.data[0].visibility_statute_mi,
                 temp: results.data[0].temp_c,
-                dew: results.data[0].dewpoint_c
+                dew: results.data[0].dewpoint_c,
+                avwxcolor
             });
+            
         });
         
     }
@@ -49,7 +68,7 @@ class Resources extends React.Component {
                 <h1>Resources</h1>
                 <p>Here are some great resources available to pilots.</p>
                 <h3>Weather</h3>
-                    Current Weather at KCRG: {this.state.currentweather}<br />
+                    Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
                     Altimeter: {this.state.altim}<br />
                     Wind Direction: {this.state.wind_dir}<br />
                     Wind Speed: {this.state.wind_speed}<br />

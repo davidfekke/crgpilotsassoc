@@ -1,7 +1,7 @@
 ---
 title: "Breakfast"
 date: 2018-06-30
-cover_image: "./2018-coffee-donuts.jpg"
+cover_image: "./breakfast.jpg"
 ---
 
 6-30-18 - Breakfast

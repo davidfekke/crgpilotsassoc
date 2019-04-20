@@ -6,6 +6,7 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 import Article from "../components/article.js"
 import MainHelmet from "../components/helmet.js"
+import ExtLink from "../components/extlink"
 
 export default class BlogList extends React.Component {
   render() {
@@ -22,6 +23,16 @@ export default class BlogList extends React.Component {
         <Navbar />
         <Header />
         <Article>
+          <div>
+            <h1 style={{ fontSize: '3rem'}}>Craig Airport Pilots Association Goals</h1>
+              <ul>
+                <li>Build a community of people interested in Craig Airport and Flying</li>
+                <li>Share information about Airport operations, Social events and Flying in General</li>  
+              </ul>
+          </div>
+          <div>
+            <h1><ExtLink uri="https://goo.gl/forms/f9nZ5Ii0lWg1Fezg2" name="Click here to sign up!" /></h1>
+          </div>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             let HeaderImage;

@@ -25,6 +25,10 @@ class Resources extends React.Component {
             temp: 0,
             dew: 0,
             avwxcolor: 'black',
+            sky_condition: {
+                sky_cover: '',
+                cloud_base_ft_agl: ''
+            },
             raw_text: '',
             forecast: [],
             forecast_raw_text: ''
@@ -75,6 +79,7 @@ class Resources extends React.Component {
                 visibility: results.data.reports[0].visibility_statute_mi,
                 temp: results.data.reports[0].temp_c,
                 dew: results.data.reports[0].dewpoint_c,
+                sky_condition: results.data.reports[0].sky_condition,
                 avwxcolor,
                 raw_text: results.data.reports[0].raw_text
             });
@@ -106,6 +111,7 @@ class Resources extends React.Component {
                                             marginTop: '1rem' }} 
                             onClick={this.refresh}>Refresh</button><br /><br />
                     Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
+                    Sky Condition: {this.state.sky_condition.sky_cover} {this.state.sky_condition.cloud_base_ft_agl}<br />
                     Altimeter: {this.state.altim}<br />
                     Wind Direction: {this.state.wind_dir}<br />
                     Wind Speed: {this.state.wind_speed}<br />
@@ -122,11 +128,12 @@ class Resources extends React.Component {
                     return (<div key={item.fcst_time_from}>
                         From: {from_date}&nbsp;
                         to: {to_date} <br />
+                        Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br />
                         Wind direction: {item.wind_dir_degrees}<br />
                         Wind speed: {item.wind_speed_kt}<br />
                         Wind gust: {item.wind_gust_kt}<br />
                         Visibility: {item.visibility_statute_mi}<br /> 
-                        Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br /><br />
+                        <br />
                     </div>)
                 })}
                 Raw Text: {this.state.forecast_raw_text}<br /><br />

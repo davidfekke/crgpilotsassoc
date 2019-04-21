@@ -81,7 +81,7 @@ class Resources extends React.Component {
             this.notify();
         });
 
-        axios.get('http://avwx.herokuapp.com/taf/kcrg').then(results => {   
+        axios.get('https://avwx.herokuapp.com/taf/kcrg').then(results => {   
             this.setState({ 
                 forecast: results.data.reports[0].forecast,
                 forecast_raw_text: results.data.reports[0].raw_text

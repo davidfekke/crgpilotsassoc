@@ -7,6 +7,7 @@ import Header from "../components/normalheader"
 import Article from "../components/article"
 import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
+import moment from "moment"
 
 class Resources extends React.Component {
     constructor() {
@@ -37,14 +38,16 @@ class Resources extends React.Component {
     }
 
     buttonRefresh(event) {
+        console.log('Weather refreshed');
         event.preventDefault();
         this.refresh();
     }
 
     refresh() {
-        axios.get('https://avwxproxy.herokuapp.com/metar/kcrg').then(results => {
+        axios.get('https://avwx.herokuapp.com/metar/kcrg').then(results => {
             let avwxcolor = 'black';
-            switch (results.data[0].flight_category) {
+            console.log(results.data.reports[0])
+            switch (results.data.reports[0].flight_category) {
                 case 'VFR':
                     avwxcolor = 'green';
                     break;
@@ -57,25 +60,24 @@ class Resources extends React.Component {
                 default:
                     avwxcolor = 'black';
             }
-            this.setState({ currentweather: results.data[0].flight_category, 
-                altim: results.data[0].altim_in_hg, 
-                wind_dir: results.data[0].wind_dir_degrees,
-                wind_speed: results.data[0].wind_speed_kt,
-                gust: results.data[0].wind_gust_kt,
-                visibility: results.data[0].visibility_statute_mi,
-                temp: results.data[0].temp_c,
-                dew: results.data[0].dewpoint_c,
+            this.setState({ currentweather: results.data.reports[0].flight_category, 
+                altim: results.data.reports[0].altim_in_hg.toFixed(2), 
+                wind_dir: results.data.reports[0].wind_dir_degrees,
+                wind_speed: results.data.reports[0].wind_speed_kt,
+                gust: results.data.reports[0].wind_gust_kt,
+                visibility: results.data.reports[0].visibility_statute_mi,
+                temp: results.data.reports[0].temp_c,
+                dew: results.data.reports[0].dewpoint_c,
                 avwxcolor,
-                raw_text: results.data[0].raw_text
+                raw_text: results.data.reports[0].raw_text
             });
         });
 
-        axios.get('http://avwxproxy.herokuapp.com/taf/kcrg').then(results => {
+        axios.get('http://avwx.herokuapp.com/taf/kcrg').then(results => {   
             this.setState({ 
-                forecast: results.data.TAF[0].forecast,
-                forecast_raw_text: results.data.TAF[0].raw_text
+                forecast: results.data.reports[0].forecast,
+                forecast_raw_text: results.data.reports[0].raw_text
             });
-            
         });
     }
     
@@ -88,6 +90,12 @@ class Resources extends React.Component {
                 <h1>Resources</h1>
                 <p>Here are some great resources available to pilots.</p>
                 <h3>Weather</h3>
+                    <button style={{ fontSize: '1rem', 
+                                            borderRadius: '3px', 
+                                            backgroundColor: 'lightblue',
+                                            padding: '0.5rem',
+                                            marginTop: '1rem' }} 
+                            onClick={this.refresh}>Refresh</button><br /><br />
                     Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
                     Altimeter: {this.state.altim}<br />
                     Wind Direction: {this.state.wind_dir}<br />
@@ -95,30 +103,24 @@ class Resources extends React.Component {
                     Wind Gust: {this.state.gust}<br />
                     Temperature: {this.state.temp} (Celcius)<br />
                     Dewpoint: {this.state.dew} (Celcius)<br />
-                    Raw Text: {this.state.raw_text}<br />
-                    <button style={{ fontSize: '1rem', 
-                                        borderRadius: '3px', 
-                                        backgroundColor: 'lightblue',
-                                        padding: '0.5rem',
-                                        marginTop: '1rem' }} 
-                        onClick={this.refresh}>Refresh</button><br /><br />
+                    Raw Text: {this.state.raw_text}<br /><br />
+                    
 
-                Forcasted weather at KCRG:<br />
-                Raw Text: {this.state.forecast_raw_text}<br /><br />
+                Forcasted weather at KCRG:<br /><br />
                 {this.state.forecast.map(item => {
-                    const from_date = item.fcst_time_from;
-                    const to_date = item.fcst_time_to;
-                    return (<div>
+                    const from_date = moment(item.fcst_time_from).format('YYYY-MM-DD h:mm:ss a');
+                    const to_date = moment(item.fcst_time_to).format('YYYY-MM-DD h:mm:ss a');
+                    return (<div key={item.fcst_time_from}>
                         From: {from_date}&nbsp;
                         to: {to_date} <br />
                         Wind direction: {item.wind_dir_degrees}<br />
                         Wind speed: {item.wind_speed_kt}<br />
                         Wind gust: {item.wind_gust_kt}<br />
                         Visibility: {item.visibility_statute_mi}<br /> 
-                        WX: {item.wx_string}<br />
-                        Sky Condition: {item.sky_condition}<br /><br />
+                        Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br /><br />
                     </div>)
                 })}
+                Raw Text: {this.state.forecast_raw_text}<br /><br />
                 <p>
                     <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
                     <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
@@ -151,24 +153,3 @@ class Resources extends React.Component {
 }
 
 export default Resources;
-
-// export default () => (
-//     <Layout>
-//         <Helmet title="Resources" />
-//         <Navbar />
-//         <Header headline="Resources" />
-//         <Article>
-//             <h1>Resources</h1>
-//             <p>Here are some great resources available to pilots.</p>
-//             <h3>Weather</h3>
-//                 Current Weather at KCRG: 
-//             <h3>Gear</h3>
-            
-//             <h3>Parts</h3>
-            
-            
-//         </Article>
-//         <Footer />
-//     </Layout>
-// );
-

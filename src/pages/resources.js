@@ -8,6 +8,8 @@ import Article from "../components/article"
 import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
 import moment from "moment"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Resources extends React.Component {
     constructor() {
@@ -30,6 +32,8 @@ class Resources extends React.Component {
 
         this.buttonRefresh = this.buttonRefresh.bind(this);
         this.refresh = this.refresh.bind(this);
+
+        toast.configure();
     }
     
     componentDidMount() {
@@ -37,8 +41,11 @@ class Resources extends React.Component {
         this.refresh();
     }
 
+    notify = () => toast.success('Weather refreshed!');
+
     buttonRefresh(event) {
         console.log('Weather refreshed');
+                
         event.preventDefault();
         this.refresh();
     }
@@ -71,6 +78,7 @@ class Resources extends React.Component {
                 avwxcolor,
                 raw_text: results.data.reports[0].raw_text
             });
+            this.notify();
         });
 
         axios.get('http://avwx.herokuapp.com/taf/kcrg').then(results => {   
@@ -84,6 +92,7 @@ class Resources extends React.Component {
     render() {
         return (<Layout>
             <Helmet title="Resources" />
+            <ToastContainer autoClose={2000} />
             <Navbar />
             <Header headline="Resources" />
             <Article>

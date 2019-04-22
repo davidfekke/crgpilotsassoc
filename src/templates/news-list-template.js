@@ -31,7 +31,7 @@ export default class BlogList extends React.Component {
               </ul>
           </div>
           <div>
-            <h1><ExtLink uri="https://goo.gl/forms/f9nZ5Ii0lWg1Fezg2" name="Click here to sign up!" /></h1>
+            <h1><Link to="join" style={{ textDecoration: 'none', color: 'blue' }}>Click here to sign up!</Link></h1>
           </div>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

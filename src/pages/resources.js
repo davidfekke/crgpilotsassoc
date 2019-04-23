@@ -102,65 +102,86 @@ class Resources extends React.Component {
             <Header headline="Resources" />
             <Article>
                 <h1>Resources</h1>
+
                 <p>Here are some great resources available to pilots.</p>
-                <h3>Weather</h3>
-                    <button style={{ fontSize: '1rem', 
-                                            borderRadius: '3px', 
-                                            backgroundColor: 'lightblue',
-                                            padding: '0.5rem',
-                                            marginTop: '1rem' }} 
-                            onClick={this.refresh}>Refresh</button><br /><br />
-                    Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
-                    Sky Condition: {this.state.sky_condition.sky_cover} {this.state.sky_condition.cloud_base_ft_agl}<br />
-                    Altimeter: {this.state.altim}<br />
-                    Wind Direction: {this.state.wind_dir}<br />
-                    Wind Speed: {this.state.wind_speed}<br />
-                    Wind Gust: {this.state.gust}<br />
-                    Temperature: {this.state.temp} (Celcius)<br />
-                    Dewpoint: {this.state.dew} (Celcius)<br />
-                    Raw Text: {this.state.raw_text}<br /><br />
+                
+                <div style={{ display: 'grid', gridGap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))'}}>
+                    
+                    <div className="resourceBlock" style={{ gridRow: '1 / 5'}}>
+                        <h3>Current Weather</h3>
+                        <button style={{ fontSize: '1rem', 
+                                                borderRadius: '3px', 
+                                                backgroundColor: 'lightblue',
+                                                padding: '0.5rem',
+                                                marginTop: '1rem' }} 
+                                onClick={this.refresh}>Refresh</button><br /><br />
+                        Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
+                        Sky Condition: {this.state.sky_condition.sky_cover} {this.state.sky_condition.cloud_base_ft_agl}<br />
+                        Altimeter: {this.state.altim}<br />
+                        Wind Direction: {this.state.wind_dir}<br />
+                        Wind Speed: {this.state.wind_speed}<br />
+                        Wind Gust: {this.state.gust}<br />
+                        Temperature: {this.state.temp} (Celcius)<br />
+                        Dewpoint: {this.state.dew} (Celcius)<br />
+                        Raw Text: {this.state.raw_text}<br /><br />
+                            
+
+                        Forcasted weather at KCRG:<br /><br />
+                        {this.state.forecast.map(item => {
+                            const from_date = moment(item.fcst_time_from).format('YYYY-MM-DD h:mm a');
+                            const to_date = moment(item.fcst_time_to).format('YYYY-MM-DD h:mm a');
+                            return (<div key={item.fcst_time_from}>
+                                From: {from_date}&nbsp;
+                                to: {to_date} <br />
+                                Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br />
+                                Wind direction: {item.wind_dir_degrees}<br />
+                                Wind speed: {item.wind_speed_kt}<br />
+                                Wind gust: {item.wind_gust_kt}<br />
+                                Visibility: {item.visibility_statute_mi}<br /> 
+                                <br />
+                            </div>)
+                        })}
+                        Raw Text: {this.state.forecast_raw_text}<br /><br />
+                    </div>
+
+                    <div className="resourceBlock" >
+                        <h3>Weather</h3>
+                        <p>
+                            <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
+                            <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
+                            <ExtLink uri="http://www.usairnet.com/cgi-bin/launch/code.cgi?Submit=Go&sta=KCRG&state=FL" name="US Airnet" /><br />
+                        </p>
+                    </div>
+                    
+                    <div className="resourceBlock" >
+                        <h3>Flight Planning</h3>
+                            
+                        <p>
+                            <ExtLink uri="https://www.foreflight.com" name="ForeFlight" /><br />
+                            <ExtLink uri="https://www.fltplan.com" name="Flight Plan" /><br />
+                            <ExtLink uri="https://www.skyvector.com" name="Sky Vector" /><br />
+                        </p>
+                    </div>
+                    
+                    <div className="resourceBlock">
+                        <h3>Gear</h3>
+                        <p>
+                            <ExtLink uri="https://www.sportys.com/pilotshop" name="Sporty's Pilot Shop" /><br />
+                            <ExtLink uri="https://www.pilotmall.com/" name="Pilot Mall" /><br />
+                        </p>
+                    </div>
+                    
+                    <div className="resourceBlock" >
+                        <h3>Parts</h3>
+                        <p>
+                            <ExtLink uri="https://www.aircraftgeneralsupply.com" name="Aircraft General Supply" /><br />
+                            <ExtLink uri="https://www.aircraftspruce.com" name="Aircraft Spruce" /><br />
+                        </p>
+                    </div>
+                    
                     
 
-                Forcasted weather at KCRG:<br /><br />
-                {this.state.forecast.map(item => {
-                    const from_date = moment(item.fcst_time_from).format('YYYY-MM-DD h:mm:ss a');
-                    const to_date = moment(item.fcst_time_to).format('YYYY-MM-DD h:mm:ss a');
-                    return (<div key={item.fcst_time_from}>
-                        From: {from_date}&nbsp;
-                        to: {to_date} <br />
-                        Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br />
-                        Wind direction: {item.wind_dir_degrees}<br />
-                        Wind speed: {item.wind_speed_kt}<br />
-                        Wind gust: {item.wind_gust_kt}<br />
-                        Visibility: {item.visibility_statute_mi}<br /> 
-                        <br />
-                    </div>)
-                })}
-                Raw Text: {this.state.forecast_raw_text}<br /><br />
-                <p>
-                    <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
-                    <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
-                </p>
-                    
-                <h3>Flight Planning</h3>
-                    
-                <p>
-                    <ExtLink uri="https://www.foreflight.com" name="ForeFlight" /><br />
-                    <ExtLink uri="https://www.fltplan.com" name="Flight Plan" /><br />
-                    <ExtLink uri="https://www.skyvector.com" name="Sky Vector" /><br />
-                </p>
-                
-                <h3>Gear</h3>
-                <p>
-                    <ExtLink uri="https://www.sportys.com/pilotshop" name="Sporty's Pilot Shop" />
-                </p>
-                
-                <h3>Parts</h3>
-                <p>
-                <ExtLink uri="https://www.aircraftgeneralsupply.com" name="Aircraft General Supply" /><br />
-                <ExtLink uri="https://www.aircraftspruce.com" name="Aircraft Spruce" /><br />
-                </p>
-                
+                </div>
                 
             </Article>
             <Footer />

@@ -1,32 +1,37 @@
 .gridarea {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 20px;
     align-items: center;
     color: white;
 }
 
-.gridarea > div > ul {
-    display: block; 
+.gridarea>div>ul {
+    display: block;
     list-style: none;
     padding: 0px;
 }
 
-.gridarea > div > ul > li {
+.gridarea>div>ul>li {
     margin: 0.75rem;
     color: white;
 }
 
-.gridarea > div > ul > li > a {
+.gridarea>div>ul>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+footer div>p>a {
     text-decoration: none;
     color: white;
 }
 
 @media (max-width: 768px) {
     .gridarea {
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         grid-auto-rows: minmax(200px, auto);
         grid-gap: 20px;
     }
@@ -34,8 +39,8 @@
 
 @media (max-width: 500px) {
     .gridarea {
-        display: grid; 
-        grid-template-columns: 1fr; 
+        display: grid;
+        grid-template-columns: 1fr;
         grid-auto-rows: minmax(200px, auto);
         grid-gap: 20px;
     }

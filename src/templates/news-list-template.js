@@ -7,6 +7,7 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 import Article from "../components/article.js"
 import MainHelmet from "../components/helmet.js"
+// import Img from "gatsby-image"
 
 export default class BlogList extends React.Component {
   joinAction() {
@@ -47,7 +48,7 @@ export default class BlogList extends React.Component {
                     <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
                         <Link to={`news${node.fields.slug}`} style={{ textDecoration: 'none', color: 'black' }}>{title}</Link>
                     </div>
-                    {HeaderImage && <img src={HeaderImage} alt="Feature" />}
+                    {HeaderImage && <img src={HeaderImage} style={{ width: '100%'}} alt="Feature" />}
                     <div dangerouslySetInnerHTML={{ __html: node.html}} />
                 </div>)
           })}

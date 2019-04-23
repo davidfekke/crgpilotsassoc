@@ -6,8 +6,9 @@ import Navbar from "../components/navbar"
 import Header from "../components/normalheader"
 import Article from "../components/article"
 import Footer from "../components/footer"
+import Img from "gatsby-image"
 
-export default class BlogPost extends React.Component {
+export default class NewsPost extends React.Component {
     render() {
         const data = this.props.data
         const {
@@ -16,10 +17,13 @@ export default class BlogPost extends React.Component {
         } = this.props.pageContext
         const post = data.page
         let HeaderImage;
-        if (post.frontmatter.cover_image !== undefined && post.frontmatter.cover_image !== null && post.frontmatter.cover_image.publicURL !== undefined && post.frontmatter.cover_image.publicURL !== null) {
-            HeaderImage = post.frontmatter.cover_image.publicURL;
+        if (post.frontmatter.cover_image !== undefined && 
+            post.frontmatter.cover_image !== null && 
+            post.frontmatter.cover_image.childImageSharp !== undefined && 
+            post.frontmatter.cover_image.childImageSharp !== null) {
+            HeaderImage = post.frontmatter.cover_image.childImageSharp.fluid;
         }
-        
+
         //const url = `https://fek.io/blog${post.fields.slug}`;
         //const title = post.frontmatter.title;
 
@@ -29,7 +33,8 @@ export default class BlogPost extends React.Component {
             <Header headline={ post.frontmatter.title }/>{" "} 
                 <Article> {" "} 
                 { post.frontmatter.date} {" "} <br />
-                {HeaderImage && <img src={HeaderImage} alt="Feature" />}
+                {HeaderImage && <Img fluid={post.frontmatter.cover_image.childImageSharp.fluid} alt="Feature" />}
+                {/* // {HeaderImage && <Img fluid={HeaderImage} alt="Feature" />} */}
                 <div dangerouslySetInnerHTML={{ __html: post.html }}/>{" "} 
                 {prev && (<Link to={`news/${prev.fields.slug}`} > ←Previous Page </Link>)} 
                 {" "} 
@@ -49,7 +54,11 @@ export default class BlogPost extends React.Component {
                     title
                     date(formatString: "MMMM Do, YYYY")
                     cover_image {
-                        publicURL
+                        childImageSharp {
+                            fluid(maxWidth: 1160, quality: 75) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
                     }
                 }
                 fields {

@@ -71,12 +71,13 @@ class Resources extends React.Component {
                 default:
                     avwxcolor = 'black';
             }
+            console.log(results.data.reports[0].visibility_statute_mi)
             this.setState({ currentweather: results.data.reports[0].flight_category, 
                 altim: results.data.reports[0].altim_in_hg.toFixed(2), 
                 wind_dir: results.data.reports[0].wind_dir_degrees,
                 wind_speed: results.data.reports[0].wind_speed_kt,
                 gust: results.data.reports[0].wind_gust_kt,
-                visibility: results.data.reports[0].visibility_statute_mi,
+                visibility: parseInt(results.data.reports[0].visibility_statute_mi),
                 temp: results.data.reports[0].temp_c,
                 dew: results.data.reports[0].dewpoint_c,
                 sky_condition: results.data.reports[0].sky_condition,
@@ -118,6 +119,7 @@ class Resources extends React.Component {
                         Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
                         Sky Condition: {this.state.sky_condition.sky_cover} {this.state.sky_condition.cloud_base_ft_agl}<br />
                         Altimeter: {this.state.altim}<br />
+                        Visibility: {this.state.visibility}<br />
                         Wind Direction: {this.state.wind_dir}<br />
                         Wind Speed: {this.state.wind_speed}<br />
                         Wind Gust: {this.state.gust}<br />
@@ -137,7 +139,7 @@ class Resources extends React.Component {
                                 Wind direction: {item.wind_dir_degrees}<br />
                                 Wind speed: {item.wind_speed_kt}<br />
                                 Wind gust: {item.wind_gust_kt}<br />
-                                Visibility: {item.visibility_statute_mi}<br /> 
+                                Visibility: {parseInt(item.visibility_statute_mi)}<br /> 
                                 <br />
                             </div>)
                         })}

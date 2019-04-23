@@ -56,7 +56,7 @@ export default () => (
             </div>
             <div style={{ display: 'block', width: '100%', clear: 'both'}}>
                 <div style={{ float: 'left', width: '200px', padding: '1rem'}}>
-                    <img src={HolladayAviation} alt="Holladay Aviation" style={{ witdh: '175px' }} />
+                    <img src={withPrefix('HolladayAviationvector.svg')} alt="Holladay Aviation" style={{ width: '175px' }} />
                 </div>
                 <div style={{ overflow: 'hidden'}}>
                     <ExtLink uri="https://www.holladayaviation.com/" name="Holladay Aviation" />

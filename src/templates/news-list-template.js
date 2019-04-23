@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { navigateTo } from "gatsby-link"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar.js"
 import Header from "../components/header.js"
@@ -8,6 +9,10 @@ import Article from "../components/article.js"
 import MainHelmet from "../components/helmet.js"
 
 export default class BlogList extends React.Component {
+  joinAction() {
+    navigateTo('join');
+  }
+  
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
     const { currentPage, numPages } = this.props.pageContext;
@@ -30,7 +35,7 @@ export default class BlogList extends React.Component {
               </ul>
           </div>
           <div>
-            <h1><Link to="join" style={{ textDecoration: 'none', color: 'blue' }}>Click here to sign up!</Link></h1>
+            <button className="cool" onClick={this.joinAction}>Click here to sign up!</button><br /><br />
           </div>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

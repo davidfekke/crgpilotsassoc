@@ -8,7 +8,6 @@ import Article from "../components/article"
 import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
 import BeachBannerLogo from "./beach-banners-logo.svg"
-import HolladayAviation from "./HolladayAviation_logo.jpg"
 
 export default () => (
     <Layout>

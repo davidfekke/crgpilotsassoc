@@ -28,16 +28,15 @@ export default class BlogList extends React.Component {
         <Navbar />
         <Header />
         <Article>
-          <div>
+          <div style={{ borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem' }}>
             <h1 style={{ fontSize: '3rem'}}>Craig Airport Pilots Association Goals</h1>
               <ul>
                 <li>Build a community of people interested in Craig Airport and Flying</li>
                 <li>Share information about Airport operations, Social events and Flying in General</li>  
               </ul>
+              <button className="cool" onClick={this.joinAction}>Click here to sign up!</button>
           </div>
-          <div>
-            <button className="cool" onClick={this.joinAction}>Click here to sign up!</button><br /><br />
-          </div>
+
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             let HeaderImage;

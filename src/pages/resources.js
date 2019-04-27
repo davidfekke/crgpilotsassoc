@@ -106,7 +106,7 @@ class Resources extends React.Component {
 
                 <p>Here are some great resources available to pilots.</p>
                 
-                <div style={{ display: 'grid', gridGap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))'}}>
+                <div style={{ display: 'grid', gridGap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))'}}>
                     
                     <div className="resourceBlock" style={{ gridRow: '1 / 5'}}>
                         <h3>Current Weather</h3>

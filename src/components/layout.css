@@ -113,12 +113,23 @@ div.aboutDiv {
     margin: 0px 100px;
 }
 
+div.fboGrid {
+    display: grid;
+    grid-gap: 10px; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
 @media (max-width: 500px) {
     body {
         padding-top: 72px;
     }
     div.aboutDiv {
         margin: 0px;
+    }
+    div.fboGrid {
+        display: grid;
+        grid-gap: 10px; 
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 

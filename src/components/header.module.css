@@ -31,6 +31,10 @@ h1.myheadline {
         background-size: cover;
         margin: 0px 0px 50px 0px;
     }
+    img.logo {
+        padding: 100px 0px 100px 0px;
+        margin: 0px 75px 0px 75px;
+    }
     h1.myheadline {
         padding: 150px 0px 150px 0px;
         text-align: center;
@@ -50,6 +54,10 @@ h1.myheadline {
         position: relative;
         background-size: cover;
         margin: 0px 0px 50px 0px;
+    }
+    img.logo {
+        padding: 50px 0px 50px 0px;
+        margin: 0px 50px 0px 50px;
     }
     h1.myheadline {
         padding: 100px 0px 100px 0px;

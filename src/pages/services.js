@@ -20,7 +20,7 @@ export default () => (
                 <h3>Fixed Base Operators</h3>
             </div>
             
-            <div style={{ display: 'grid', gridGap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))'}}>
+            <div style={{ display: 'grid', gridGap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))'}}>
                 <div style={{ display: 'inline-block', textAlign: 'center', borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem'}}>
                     
                     <div style={{ padding: '1rem'}}>

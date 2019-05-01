@@ -18,25 +18,52 @@ function encode(data) {
 export default class Contact extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            firstname: '',
+            lastname: '',
+            email: ''
+        };
     }
 
+    checkIfPassedValidation = currState => {
+        let retValue = { passed: true, message: '' };
+        if (!currState.firstname || currState.firstname.length === 0) {
+            retValue.passed = false;
+            retValue.message += ' Must include a first name.';
+        }
+        if (!currState.lastname || currState.lastname.length === 0) {
+            retValue.passed = false;
+            retValue.message += ' Must include a last name.';
+        }
+        if (!currState.email || currState.email.length === 0) {
+            retValue.passed = false;
+            retValue.message += ' Must include an email.';
+        }
+        return retValue;
+    }
+    
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
-      };
+    };
     
     handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": form.getAttribute("name"),
-                ...this.state
-            })
-        }).then(() => navigateTo(form.getAttribute("action")))
-            .catch(error => alert(error));
+        const result = this.checkIfPassedValidation(this.state);
+        console.log(result);
+        if (result.passed) {
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({
+                    "form-name": form.getAttribute("name"),
+                    ...this.state
+                })
+            }).then(() => navigateTo(form.getAttribute("action")))
+                .catch(error => alert(error));    
+        } else {
+            alert(`VALIDATION FAILED: ${result.message}`);
+        }
     };
 
     render() {
@@ -58,7 +85,7 @@ export default class Contact extends React.Component {
                         <form 
                             name="join" 
                             method="POST" 
-                            action="/joinsuccess/" 
+                            action="/joinsuccess/"
                             data-netlify-honeypot="bot-field" 
                             data-netlify="true"
                             onSubmit={this.handleSubmit}>

@@ -1,11 +1,11 @@
 ---
-title: "Calling All Women Pilots!"
+title: "Calling All Women (and Men) Pilots!"
 date: 2019-05-03
 ---
 
 ![Ninety Nines](./ninety-nines.jpg)
 
-# Calling All Women Pilots!
+# Calling All Women Pilots! The Men are also invited!
 
 From Meredith Holladay;
 

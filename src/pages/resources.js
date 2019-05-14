@@ -152,6 +152,7 @@ class Resources extends React.Component {
                             <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
                             <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
                             <ExtLink uri="http://www.usairnet.com/cgi-bin/launch/code.cgi?Submit=Go&sta=KCRG&state=FL" name="US Airnet" /><br />
+<ExtLink uri=“https://usairnet.com” name=“USAirNet.com” />
                         </p>
                     </div>
                     

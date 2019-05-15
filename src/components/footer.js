@@ -2,7 +2,7 @@ import React from "react"
 import Container from "./container.js"
 import { Link } from "gatsby"
 import ExtLink from "./extlink"
-import { FaFacebook } from 'react-icons/fa'; // FaTwitter, FaLinkedin, FaGithub, FaYoutube
+import { FaFacebook, FaLinkedin } from 'react-icons/fa'; // FaTwitter, FaLinkedin, FaGithub, FaYoutube
 import footerStyles from "./footer.module.css"
 
 export default () => {
@@ -16,6 +16,12 @@ export default () => {
                             style = {{ textDecoration: 'none', color: 'black' }}> 
                             <FaFacebook size = { 32 } style = {{ padding: '5px', color: 'white' }} />
                         </a>  
+                        <a href="https://www.linkedin.com/groups/12242408/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style= {{ textDecoration: 'none', color: 'black' }}>
+                            <FaLinkedin size={ 32 } style={{ padding: '5px', color: 'white' }} />
+                        </a>
                     </div> 
                     <nav className = { footerStyles.gridarea } >
                         <div>

@@ -9,6 +9,7 @@ import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
 import moment from "moment"
 import { ToastContainer, toast } from 'react-toastify';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa'; 
 import 'react-toastify/dist/ReactToastify.css';
 
 class Resources extends React.Component {
@@ -152,7 +153,7 @@ class Resources extends React.Component {
                             <ExtLink uri="https://www.1800wxbrief.com" name="Leidos 1-800-WX-BRIEF" /><br />
                             <ExtLink uri="https://www.aviationweather.gov/" name="Aviation Weather" /><br />
                             <ExtLink uri="http://www.usairnet.com/cgi-bin/launch/code.cgi?Submit=Go&sta=KCRG&state=FL" name="US Airnet" /><br />
-<ExtLink uri=“https://usairnet.com” name=“USAirNet.com” />
+                            <ExtLink uri="https://usairnet.com" name="USAirNet.com" /><br />
                         </p>
                     </div>
                     
@@ -167,18 +168,30 @@ class Resources extends React.Component {
                     </div>
                     
                     <div className="resourceBlock">
-                        <h3>Gear</h3>
+                        <h3>Parts and Gear</h3>
                         <p>
                             <ExtLink uri="https://www.sportys.com/pilotshop" name="Sporty's Pilot Shop" /><br />
                             <ExtLink uri="https://www.pilotmall.com/" name="Pilot Mall" /><br />
+                            <ExtLink uri="https://www.aircraftgeneralsupply.com" name="Aircraft General Supply" /><br />
+                            <ExtLink uri="https://www.aircraftspruce.com" name="Aircraft Spruce" /><br />
                         </p>
                     </div>
                     
                     <div className="resourceBlock" >
-                        <h3>Parts</h3>
+                        <h3>Social Media</h3>
                         <p>
-                            <ExtLink uri="https://www.aircraftgeneralsupply.com" name="Aircraft General Supply" /><br />
-                            <ExtLink uri="https://www.aircraftspruce.com" name="Aircraft Spruce" /><br />
+                        <a href = "https://www.facebook.com/groups/849967972062524/"
+                            target = "_blank"
+                            rel = "noopener noreferrer"
+                            style = {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}> 
+                            <FaFacebook size = { 20 } style = {{ padding: '5px', color: 'black' }} /> Facebook
+                        </a> 
+                        <a href="https://www.linkedin.com/groups/12242408/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center'}}>
+                            <FaLinkedin size={ 20 } style={{ padding: '5px', color: 'black' }} /> Linkedin
+                        </a>
                         </p>
                     </div>
                     

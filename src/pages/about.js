@@ -14,19 +14,22 @@ export default () => (
         <Header headline="About the Craig Airport Pilots Association" />
         <Article>
             <h1>About</h1>
+            <img src={withPrefix('capa-group-photo-2019.jpg')} alt="Craig Pilots Group Photo" style={{ width: 'auto' }} />
             <p>
                 The purpose of the Craig Airport Pilots Association is to help build a community of people interested in Craig Airport and Flying.
                 We also want to help share information about Airport operations, Social events and Flying in General. 
             </p>
-            <img src={withPrefix('1922_Craig_LB.jpg')} alt="Lt. Commander James E. Craig" style={{ width: 'auto' }}/>
             <p>
                 Craig, now known as Jacksonville Executive at Craig Airport (JAXEX), was originally built in the 1940s, 
-                one of six airports in the area developed for military training. 
+                one of six airports in the area developed for military training.   
+            </p>
+            <img src={withPrefix('02585.gif')} alt="Diagram" style={{ width: 'auto' }}/>
+            <p>
                 In 1946 the US Military gave the airport to the City of Jacksonville, 
                 which named the airport after fallen Navy Lt. Commander James Edwin Craig (1901-1941) who was killed 
                 in action during the Japanese attack on Pearl Harbor.  
             </p>
-            <img src={withPrefix('02585.gif')} alt="Diagram" style={{ width: 'auto' }}/>
+            <img src={withPrefix('1922_Craig_LB.jpg')} alt="Lt. Commander James E. Craig" style={{ width: 'auto' }}/>
         </Article>
         <Footer />
     </Layout>

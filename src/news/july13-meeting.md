@@ -15,7 +15,8 @@ The purpose of the Craig Airport Pilots Association (CAPA)
 is to build a community of people interested in Craig
 Airport. We also want to share information about airport
 operations, social events and flying in general.
-Membership is FREE! All are welcome!
+
+### Membership is FREE! All are welcome!
 Students - CFIs - Mechanics - FBOs - ATC
 
 * Roster is 100+ and growing!

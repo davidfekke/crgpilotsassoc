@@ -9,7 +9,7 @@ import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
 import moment from "moment"
 import { ToastContainer, toast } from 'react-toastify';
-import { FaFacebook, FaLinkedin } from 'react-icons/fa'; 
+import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa'; 
 import 'react-toastify/dist/ReactToastify.css';
 
 class Resources extends React.Component {
@@ -190,6 +190,12 @@ class Resources extends React.Component {
                             rel="noopener noreferrer"
                             style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center'}}>
                             <FaLinkedin size={ 20 } style={{ padding: '5px', color: 'black' }} /> Linkedin
+                        </a>
+                        <a href="https://www.instagram.com/craigpilots/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}>
+                            <FaInstagram size={ 20 } style={{ padding: '5px', color: 'black' }} /> Instagram
                         </a>
                         </p>
                     </div>

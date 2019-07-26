@@ -79,8 +79,52 @@ export default class EAAYoungEagles extends React.Component {
                             <input type="text" name="phone" onChange={this.handleChange} />
                         
                         
-                            <label for="message">Message: </label>
-                            <textarea rows="7" name="message" onChange={this.handleChange}></textarea>
+                            <label for="volunteering">I am interested in volunteering to help with the following (choose as many as you like): </label>
+                            <select name="volunteering" multiple>
+                                <option value="Ground Operations / Security">Ground Operations / Security</option>
+                                <option value="Pilot Safety Briefing">Pilot Safety Briefing</option>
+                                <option value="Young Eagles Orientation">Young Eagles Orientation</option>
+                                <option value="Marketing and Promotion">Marketing and Promotion</option>
+                                <option value="Line Judge">Line Judge</option> 
+                                <option value="Party Set-up and Clean-up">Party Set-up and Clean-up</option>    
+                            </select>
+                            
+                            <p>
+                            If you are pilot and are interested in participating in the Short Field Landing Contest:
+                            </p>
+                            
+                            <label for="nnumber">N# to be flown</label>
+                            <input type="text" name="nnumber" onChange={this.handleChange} />
+                            
+                            <label for="makeandmodel">Make and Model</label>
+                            <input type="text" name="makeandmodel" onChange={this.handleChange} />
+                            
+                            <label for="certificate">Pilot certificate level</label>
+                            <select name="certificate">
+                                <option value="Private">Private</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="ATP">ATP</option>
+                            </select>
+                            
+                            <p>If you are a pilot and are interested in flying Young Eagles:</p>
+                            <label for="ennumber">N# to be flown</label>
+                            <input type="text" name="ennumber" onChange={this.handleChange} />
+                            
+                            <label for="emakeandmodel">Make and Model</label>
+                            <input type="text" name="emakeandmodel" onChange={this.handleChange} />
+                            
+                            <label for="ecertificate">Pilot certificate level</label>
+                            <select name="ecertificate">
+                                <option value="Private">Private</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="ATP">ATP</option>
+                            </select>
+                            
+                            <label for="eaamembernumber">EAA member #</label>
+                            <input type="text" name="eaamembernumber" onChange={this.handleChange} />
+                            
+                            <label for="eaayoutpolicydate">EAA Youth Protection Policy and Program date completed</label>
+                            <input type="text" name="eaayoutpolicydate" onChange={this.handleChange} />
                             
                             <button type="submit">Send</button>
                             

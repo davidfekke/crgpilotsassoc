@@ -47,9 +47,9 @@ export default class EAAYoungEagles extends React.Component {
         return (<Layout>
             <Helmet title="EAA Young Eagles" />
             <Navbar />
-            <Header headline="EAA Young Eagles" />
+            <Header headline="Volunteer for EAA Young Eagles" />
             <Article>
-                <h1>EAA Young Eagles</h1>
+                <h1>EAA Young Eagles Rally and Short Field Landing Contest</h1>
                 <p>
                     Use this form to volunteer for the EAA Young Eagles.
                 </p>

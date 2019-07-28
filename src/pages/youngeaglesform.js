@@ -20,7 +20,13 @@ export default class EAAYoungEagles extends React.Component {
     }
 
     handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
+        if (e.target.type === 'select-multiple') {
+            const optionArray = e.target.selectedOptions;
+            const valueArray = Object.values(optionArray).map(item => item.value);
+            this.setState({ [e.target.name]: valueArray });
+        } else {
+            this.setState({ [e.target.name]: e.target.value });
+        }
     };
 
     handleSubmit = e => {
@@ -80,7 +86,7 @@ export default class EAAYoungEagles extends React.Component {
                         
                         
                             <label for="volunteering">I am interested in volunteering to help with the following (choose as many as you like): </label>
-                            <select name="volunteering" multiple>
+                            <select name="volunteering" multiple onChange={this.handleChange} >
                                 <option value="Ground Operations / Security">Ground Operations / Security</option>
                                 <option value="Pilot Safety Briefing">Pilot Safety Briefing</option>
                                 <option value="Young Eagles Orientation">Young Eagles Orientation</option>
@@ -100,7 +106,7 @@ export default class EAAYoungEagles extends React.Component {
                             <input type="text" name="makeandmodel" onChange={this.handleChange} />
                             
                             <label for="certificate">Pilot certificate level</label>
-                            <select name="certificate">
+                            <select name="certificate" onChange={this.handleChange}>
                                 <option value="Private">Private</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="ATP">ATP</option>
@@ -114,7 +120,7 @@ export default class EAAYoungEagles extends React.Component {
                             <input type="text" name="emakeandmodel" onChange={this.handleChange} />
                             
                             <label for="ecertificate">Pilot certificate level</label>
-                            <select name="ecertificate">
+                            <select name="ecertificate" onChange={this.handleChange}>
                                 <option value="Private">Private</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="ATP">ATP</option>

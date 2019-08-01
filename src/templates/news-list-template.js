@@ -13,6 +13,10 @@ export default class BlogList extends React.Component {
   joinAction() {
     navigateTo('join');
   }
+
+  eaaSignUp() {
+    navigateTo('youngeaglesform');
+  }
   
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
@@ -28,13 +32,19 @@ export default class BlogList extends React.Component {
         <Navbar />
         <Header />
         <Article>
+        
           <div style={{ borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem' }}>
             <h1 style={{ fontSize: '3rem'}}>Craig Airport Pilots Association Goals</h1>
               <ul>
                 <li>Build a community of people interested in Craig Airport and Flying</li>
                 <li>Share information about Airport operations, Social events and Flying in General</li>  
               </ul>
-              <button className="cool" onClick={this.joinAction}>Click here to sign up!</button>
+              <button className="cool" onClick={this.joinAction}>Click here to Join!</button>
+          </div>
+
+          <div style={{ borderRadius: '3px', padding: '.5rem', backgroundColor: '#e3f0ff', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem' }}>
+            <h1 style={{ fontSize: '2rem'}}>Short Field Landing Competition and EAA Young Eagles</h1>
+            <button className="cool" onClick={this.eaaSignUp}>Click here to volunteer!</button>
           </div>
 
           {posts.map(({ node }) => {

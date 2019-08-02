@@ -69,6 +69,9 @@ class Resources extends React.Component {
                 case 'IFR':
                     avwxcolor = 'red';
                     break;
+                case 'LIFR':
+                    avwxcolor = '#ff78cb';
+                    break;
                 default:
                     avwxcolor = 'black';
             }

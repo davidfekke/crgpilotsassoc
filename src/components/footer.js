@@ -22,7 +22,7 @@ export default () => {
                             style= {{ textDecoration: 'none', color: 'black' }}>
                             <FaLinkedin size={ 32 } style={{ padding: '5px', color: 'white' }} />
                         </a>
-                        <a href="https://www.instagram.com/craigpilots/"
+                        <a href="https://www.instagram.com/capa_flies/"
                             target="_blank"
                             rel="noopener noreferrer"
                             style= {{ textDecoration: 'none', color: 'black' }}>

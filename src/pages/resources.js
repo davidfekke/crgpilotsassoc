@@ -194,7 +194,7 @@ class Resources extends React.Component {
                             style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center'}}>
                             <FaLinkedin size={ 20 } style={{ padding: '5px', color: 'black' }} /> Linkedin
                         </a>
-                        <a href="https://www.instagram.com/craigpilots/"
+                        <a href="https://www.instagram.com/capa_flies/"
                             target="_blank"
                             rel="noopener noreferrer"
                             style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}>

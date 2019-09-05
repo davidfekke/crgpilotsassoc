@@ -28,7 +28,7 @@ export default class BlogList extends React.Component {
 
     return (
       <Layout>
-        <MainHelmet />
+        <MainHelmet title="Craig Airport Pilots Association" />
         <Navbar />
         <Header />
         <Article>

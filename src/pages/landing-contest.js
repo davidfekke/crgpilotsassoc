@@ -63,7 +63,7 @@ export default () => (
     <li>
     Based on guidelines for short field approach and landing in FAA Private Pilot ACS:
     </li>
-    <li>
+    
         <ul>
             <li>
             Touch down at a proper pitch attitude, within 200 feet beyond or on the specified point, threshold markings or runway numbers, with no side drift, minimum float, and with the airplane’s longitudinal axis aligned with and over runway centerline.
@@ -72,7 +72,7 @@ export default () => (
             Execute a timely go-around if the approach cannot be made within the tolerances specified above or for any other condition that may result in an unsafe approach or landing.
             </li>
         </ul>
-    </li>
+    
     <li>
     Scoring will be based on where the main wheels touch without bouncing.
     </li>
@@ -134,15 +134,18 @@ Bounces = 0 points<br />
 
 <ul>
     <li>
-    $20/pilot entrance fee per pilot:
+    <strong>$20/pilot entrance fee per pilot:</strong>
     </li>
-    <li>
-    Each participating pilot receives a free CAPA t-shirt
-    </li>
-    <li>
-        Winner receives a $100 gift certificate for Aircraft General Supply
-
-    </li>
+    
+        <ul>
+            <li>
+                Each participating pilot receives a free CAPA t-shirt
+            </li>
+            <li>
+                Winner receives a $100 gift certificate for Aircraft General Supply
+            </li>
+        </ul>
+    
     <li>
     Proceeds will help fund Young Eagles raffle prizes (value $200)
     </li>
@@ -153,12 +156,6 @@ Bounces = 0 points<br />
     Post-contest volunteer party and awards ceremony sponsored by Holladay Aviation
     </li>
 </ul>
-
-
-
-
-
-
         </Article>
         <Footer />
     </Layout>

@@ -29,26 +29,26 @@ export default () => (
 
 
 
-<table style={{ width: "100%"}}>
+<table style={{ width: "100%", borderCollapse: "collapse", border: "1px solid black" }}>
     <tbody >
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
             <td>8:30 a.m.</td>
             <td>Safety Briefing for Contest Pilots</td>
             <td>Holladay Aviation classroom</td>
         </tr>
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
         <td>9:00 a.m.</td>		<td>Safety Briefing for YE Pilots</td>			<td>Holladay Aviation classroom</td>
         </tr>
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
         <td>10:00 a.m.</td>	<td>Young Eagles Flights</td> 				<td>Tower Ramp</td>        
         </tr>
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
         <td>10:00 a.m.</td>	<td>Landing Contest</td>					<td>Tower Ramp</td>        
         </tr>
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
         <td>11 a.m.</td>		<td>99s/EAA Lunch Table Opens</td> 			<td>Tower Pavilion</td>        
         </tr>
-        <tr>
+        <tr style={{ borderBottom: "1px solid #ddd" }}>
         <td>3 p.m.</td>		<td colSpan="2">Flight Activities Terminate</td>        
         </tr>
         <tr>

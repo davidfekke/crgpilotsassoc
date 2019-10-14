@@ -92,7 +92,8 @@ export default class EAAYoungEagles extends React.Component {
                             
                             <label for="certificate">Pilot certificate level</label>
                             <select name="certificate" onChange={this.handleChange}>
-                                <option value="Private">Private</option>
+                                <option value="Student">Student</option>
+                                <option value="Private" selected>Private</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="ATP">ATP</option>
                             </select>

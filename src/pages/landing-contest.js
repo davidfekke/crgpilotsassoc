@@ -88,9 +88,6 @@ export default () => (
     <li>
     Style points (maximum 5 total additional points) may be awarded to a pilot for incorporating any of the following techniques into his or her approaches: forward slip to a landing, power off approach, crosswind landing, 3-point landing (for pilots flying tailwheel aircraft). These points may be used for deciding the winner in the event of a tie.    
     </li>
-    <li>
-    Handicap of -5 total points for pilots who participate in a STOL aircraft. 
-    </li>
 </ul>
 
 <h3>Eligibility:</h3>

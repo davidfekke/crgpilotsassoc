@@ -14,6 +14,10 @@ export default class BlogList extends React.Component {
     navigateTo('join');
   }
 
+  shortFieldSignUp() {
+    navigateTo('shortfieldform');
+  }
+  
   eaaSignUp() {
     navigateTo('youngeaglesform');
   }
@@ -43,6 +47,9 @@ export default class BlogList extends React.Component {
           </div>
 
           <div style={{ borderRadius: '3px', padding: '.5rem', backgroundColor: '#e3f0ff', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem' }}>
+            <h1 style={{ fontSize: '2rem'}}>Short Field Landing Competition</h1>
+            <button className="cool" onClick={this.shortFieldSignUp}>Click here to Enter Short Field Landing Competition!</button>
+          
             <h1 style={{ fontSize: '2rem'}}>Short Field Landing Competition and EAA Young Eagles</h1>
             <button className="cool" onClick={this.eaaSignUp}>Click here to volunteer!</button>
           </div>

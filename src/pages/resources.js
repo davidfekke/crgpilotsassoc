@@ -139,7 +139,7 @@ class Resources extends React.Component {
                             return (<div key={item.fcst_time_from}>
                                 From: {from_date}&nbsp;
                                 to: {to_date} <br />
-                                Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}<br />
+                                {(item.sky_condition && item.sky_condition.cloud_base_ft_agl) && (<div>Sky Condition: {item.sky_condition.sky_cover} {item.sky_condition.cloud_base_ft_agl}</div>)}
                                 Wind direction: {item.wind_dir_degrees}<br />
                                 Wind speed: {item.wind_speed_kt}<br />
                                 Wind gust: {item.wind_gust_kt}<br />

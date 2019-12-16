@@ -166,6 +166,7 @@ class Resources extends React.Component {
                             <ExtLink uri="https://www.foreflight.com" name="ForeFlight" /><br />
                             <ExtLink uri="https://www.fltplan.com" name="Flight Plan" /><br />
                             <ExtLink uri="https://www.skyvector.com" name="Sky Vector" /><br />
+                            <ExtLink uri="https://www.windy.com" name="Windy" /><br />
                         </p>
                     </div>
                     

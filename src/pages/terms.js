@@ -14,7 +14,10 @@ export default () => (
         <Article>
             <h1>Privacy Policy</h1>
             <p>
-            Privacy policy - We are collecting this information for use with Craig Airports Pilots Association to contact you and keep you informed.  You may always opt out and we will do our best to remove you promptly.  This is all run on Google forms and is as secure as Google makes it, we will take reasonable care to protect it but given the nature of the internet please don't include any information that you wish to keep secure.
+            Privacy policy - We are collecting this information for use with Craig Airports Pilots Association to contact you and keep you informed.  
+            You may always opt out and we will do our best to remove you promptly.  
+            This is all run on Netlify forms and is as secure as Netlify makes it, we will take reasonable care to protect it but given the nature of the 
+            internet please don't include any information that you wish to keep secure.
             </p>
         </Article>
         <Footer />

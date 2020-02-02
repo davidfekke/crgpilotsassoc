@@ -14,7 +14,7 @@ export default () => (
         <Header headline="About the Craig Airport Pilots Association" />
         <Article>
             <h1>About</h1>
-            <img src={withPrefix('capa-group-photo-2019.jpg')} alt="Craig Pilots Group Photo" style={{ width: 'auto' }} />
+            <img src={withPrefix('capa-group-photo-2019.jpg')} alt="Craig Pilots Group" style={{ width: 'auto' }} />
             <p>
                 The purpose of the Craig Airport Pilots Association is to help build a community of people interested in Craig Airport and Flying.
                 We also want to help share information about Airport operations, Social events and Flying in General. 

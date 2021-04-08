@@ -56,10 +56,10 @@ class Resources extends React.Component {
     }
 
     refresh() {
-        axios.get('https://avwx.herokuapp.com/metar/kcrg').then(results => {
+        axios.get('https://avwxproxy.herokuapp.com/metar/kcrg').then(results => {
             let avwxcolor = 'black';
-            console.log(results.data.reports[0])
-            switch (results.data.reports[0].flight_category) {
+            console.log(results.data);
+            switch (results.data[0].flight_category) {
                 case 'VFR':
                     avwxcolor = 'green';
                     break;
@@ -75,26 +75,26 @@ class Resources extends React.Component {
                 default:
                     avwxcolor = 'black';
             }
-            console.log(results.data.reports[0].visibility_statute_mi)
-            this.setState({ currentweather: results.data.reports[0].flight_category, 
-                altim: results.data.reports[0].altim_in_hg.toFixed(2), 
-                wind_dir: results.data.reports[0].wind_dir_degrees,
-                wind_speed: results.data.reports[0].wind_speed_kt,
-                gust: results.data.reports[0].wind_gust_kt,
-                visibility: parseInt(results.data.reports[0].visibility_statute_mi),
-                temp: results.data.reports[0].temp_c,
-                dew: results.data.reports[0].dewpoint_c,
-                sky_condition: results.data.reports[0].sky_condition,
+            console.log(results.data[0].visibility_statute_mi)
+            this.setState({ currentweather: results.data[0].flight_category, 
+                altim: results.data[0].altim_in_hg.toFixed(2), 
+                wind_dir: results.data[0].wind_dir_degrees,
+                wind_speed: results.data[0].wind_speed_kt,
+                gust: results.data[0].wind_gust_kt,
+                visibility: parseInt(results.data[0].visibility_statute_mi),
+                temp: results.data[0].temp_c,
+                dew: results.data[0].dewpoint_c,
+                sky_condition: results.data[0].sky_condition,
                 avwxcolor,
-                raw_text: results.data.reports[0].raw_text
+                raw_text: results.data[0].raw_text
             });
             this.notify();
         });
 
-        axios.get('https://avwx.herokuapp.com/taf/kcrg').then(results => {   
+        axios.get('https://avwxproxy.herokuapp.com/taf/kcrg').then(results => {   
             this.setState({ 
-                forecast: results.data.reports[0].forecast,
-                forecast_raw_text: results.data.reports[0].raw_text
+                forecast: results.data.TAF[0].forecast,
+                forecast_raw_text: results.data.TAF[0].raw_text
             });
         });
     }

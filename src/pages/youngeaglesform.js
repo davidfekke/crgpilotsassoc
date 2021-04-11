@@ -1,8 +1,8 @@
 import React from "react"
-import { navigate } from "Gatsby";
+import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
-import Helmet from "../components/helmet"
+import MainHelmet from "../components/helmet"
 import Header from "../components/normalheader"
 import Article from "../components/article"
 import Footer from "../components/footer"
@@ -13,13 +13,17 @@ function encode(data) {
       .join("&");
 }
 
-export default class EAAYoungEagles extends React.Component {
+
+
+class EAAYoungEagles extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange = e => {
+    handleChange(e) {
         if (e.target.type === 'select-multiple') {
             const optionArray = e.target.selectedOptions;
             const valueArray = Object.values(optionArray).map(item => item.value);
@@ -29,7 +33,7 @@ export default class EAAYoungEagles extends React.Component {
         }
     };
 
-    handleSubmit = e => {
+    handleSubmit(e) {
         e.preventDefault();
         const form = e.target;
         fetch("/", {
@@ -45,11 +49,12 @@ export default class EAAYoungEagles extends React.Component {
 
     render() {
         return (<Layout>
-            <Helmet title="EAA Young Eagles" />
+            <MainHelmet title="EAA Young Eagles" />
             <Navbar />
             <Header headline="Volunteer for EAA Young Eagles" />
             <Article>
                 <h1>EAA Young Eagles Rally and Short Field Landing Contest</h1>
+                {/* <p><Link to={'terms'}>Privacy Policy</Link></p> */}
                 <p>
                     Use this form to volunteer for the EAA Young Eagles.
                 </p>
@@ -141,3 +146,4 @@ export default class EAAYoungEagles extends React.Component {
     }
 }
 
+export default EAAYoungEagles

@@ -39,6 +39,7 @@ class Resources extends React.Component {
         this.refresh = this.refresh.bind(this);
 
         toast.configure();
+        this.notify = this.notify.bind(this);
     }
     
     componentDidMount() {
@@ -46,7 +47,9 @@ class Resources extends React.Component {
         this.refresh();
     }
 
-    notify = () => toast.success('Weather refreshed!');
+    notify() {
+        toast.success('Weather refreshed!');
+    } 
 
     buttonRefresh(event) {
         console.log('Weather refreshed');

@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import { navigateTo } from "gatsby-link"
+import { Link, navigate } from "gatsby"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar.js"
 import Header from "../components/normalheader.js"
@@ -23,9 +22,14 @@ export default class Contact extends React.Component {
             lastname: '',
             email: ''
         };
+
+        this.checkIfPassedValidation = this.checkIfPassedValidation.bind(this);
+        this.handleChange = this.handleChange.bind(this); 
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
 
-    checkIfPassedValidation = currState => {
+    checkIfPassedValidation(currState) {
         let retValue = { passed: true, message: '' };
         if (!currState.firstname || currState.firstname.length === 0) {
             retValue.passed = false;
@@ -59,7 +63,7 @@ export default class Contact extends React.Component {
                     "form-name": form.getAttribute("name"),
                     ...this.state
                 })
-            }).then(() => navigateTo(form.getAttribute("action")))
+            }).then(() => navigate(form.getAttribute("action")))
                 .catch(error => alert(error));    
         } else {
             alert(`VALIDATION FAILED: ${result.message}`);

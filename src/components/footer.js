@@ -3,7 +3,7 @@ import Container from "./container.js"
 import { Link } from "gatsby"
 import ExtLink from "./extlink"
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa'; // FaTwitter, FaLinkedin, FaGithub, FaYoutube
-import footerStyles from "./footer.module.css"
+import * as footerStyles from "./footer.module.css"
 
 export default () => {
     return ( <footer style = {{ backgroundColor: '#000080', marginTop: '2rem' }}>

@@ -1,6 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { navigateTo } from "gatsby-link"
+import { Link, graphql, navigate } from "gatsby"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar.js"
 import Header from "../components/header.js"
@@ -11,15 +10,15 @@ import MainHelmet from "../components/helmet.js"
 
 export default class BlogList extends React.Component {
   joinAction() {
-    navigateTo('join');
+    navigate('join');
   }
 
   shortFieldSignUp() {
-    navigateTo('shortfieldform');
+    navigate('shortfieldform');
   }
   
   eaaSignUp() {
-    navigateTo('youngeaglesform');
+    navigate('youngeaglesform');
   }
   
   render() {

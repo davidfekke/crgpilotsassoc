@@ -98,36 +98,36 @@ export default class Contact extends React.Component {
 
                             <input type="hidden" name="form-name" value="join" onChange={this.handleChange} />
     
-                            <label for="firstname">First Name: <span style={{ color: 'red' }}>*</span></label>
+                            <label htmlFor="firstname">First Name: <span style={{ color: 'red' }}>*</span></label>
                             <input type="text" name="firstname" onChange={this.handleChange} />
                         
                     
-                            <label  for="lastname">Last Name: <span style={{ color: 'red' }}>*</span></label>
+                            <label  htmlFor="lastname">Last Name: <span style={{ color: 'red' }}>*</span></label>
                             <input type="text" name="lastname" onChange={this.handleChange} />
                         
-                            <label for="email">Email: <span style={{ color: 'red' }}>*</span></label>
+                            <label htmlFor="email">Email: <span style={{ color: 'red' }}>*</span></label>
                             <input type="text" name="email" onChange={this.handleChange} />
                         
-                            <label for="address">Address: </label>
+                            <label htmlFor="address">Address: </label>
                             <input type="text" name="address" onChange={this.handleChange} />
                             
-                            <label for="phone">Phone: </label>
+                            <label htmlFor="phone">Phone: </label>
                             <input type="text" name="phone" onChange={this.handleChange} />
                         
-                            <label for="aircraft">Aircraft Model and Type: </label>
+                            <label htmlFor="aircraft">Aircraft Model and Type: </label>
                             <input type="text" name="aircraft" onChange={this.handleChange} />
                             
-                            <label for="hangerlocation">Hanger Location: </label>
+                            <label htmlFor="hangerlocation">Hanger Location: </label>
                             <input type="text" name="hangerlocation" onChange={this.handleChange} />
                             
-                            <label for="anything">Anything you want to tell Us?: </label>
+                            <label htmlFor="anything">Anything you want to tell Us?: </label>
                             <input type="text" name="anything" onChange={this.handleChange} />
                             
                             <h3 style={{ gridColumn: '1 / 3' }}>You must opt in to at least one communication method</h3>
-                            <label for="optinemail">You may email me information</label>
+                            <label htmlFor="optinemail">You may email me information</label>
                             <input type="checkbox" name="optinemail" defaultValue="false" value="true" onChange={this.handleChange} />
                             
-                            <label for="optincall">You may call me</label>
+                            <label htmlFor="optincall">You may call me</label>
                             <input type="checkbox" name="optincall" defaultValue="false" value="true" onChange={this.handleChange} />
                             
                             <button type="submit">Send</button>

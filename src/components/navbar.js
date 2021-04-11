@@ -3,14 +3,14 @@ import { Link } from "gatsby"
 import Container from "./container.js"
 import { FaBars } from "react-icons/fa"
 import Logo from "./capa.logo.svg"
-import styles from "./navbar.module.css"
+import * as styles from "./navbar.module.css"
 
 const menuData = [
   { title: "Home", link: "" },
-  { title: "Services", link: "services" },
-  { title: "About", link: "about" },
-  { title: "Resources", link: "resources" },
-  { title: "Join", link: "join" },
+  { title: "Services", link: "/services" },
+  { title: "About", link: "/about" },
+  { title: "Resources", link: "/resources" },
+  { title: "Join", link: "/join" },
 ]
 
 const MenuItem = props => (

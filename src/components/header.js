@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "./container.js"
 import Logo from "./capa.logo.svg"
-import headerStyles from "./header.module.css"
+import * as headerStyles from "./header.module.css"
 
 export default props => {
     return (

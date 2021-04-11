@@ -1,5 +1,5 @@
 import React from "react"
-import { navigateTo } from "gatsby-link"
+import { navigate } from "Gatsby";
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
 import Helmet from "../components/helmet"
@@ -39,7 +39,7 @@ export default class EAAYoungEagles extends React.Component {
                 "form-name": form.getAttribute("name"),
                 ...this.state
             })
-        }).then(() => navigateTo(form.getAttribute("action")))
+        }).then(() => navigate(form.getAttribute("action")))
             .catch(error => alert(error));
     };
 
@@ -69,23 +69,23 @@ export default class EAAYoungEagles extends React.Component {
 
                             <input type="hidden" name="form-name" value="eaayoungeagles" onChange={this.handleChange} />
     
-                            <label for="firstname">First Name: </label>
+                            <label htmlFor="firstname">First Name: </label>
                             <input type="text" name="firstname" onChange={this.handleChange} />
                         
                     
-                            <label  for="lastname">Last Name: </label>
+                            <label  htmlFor="lastname">Last Name: </label>
                             <input type="text" name="lastname" onChange={this.handleChange} />
                         
                         
-                            <label for="email">Email: </label>
+                            <label htmlFor="email">Email: </label>
                             <input type="text" name="email" onChange={this.handleChange} />
                         
                         
-                            <label for="phone">Phone: </label>
+                            <label htmlFor="phone">Phone: </label>
                             <input type="text" name="phone" onChange={this.handleChange} />
                         
                         
-                            <label for="volunteering">I am interested in volunteering to help with the following (choose as many as you like): </label>
+                            <label htmlFor="volunteering">I am interested in volunteering to help with the following (choose as many as you like): </label>
                             <select name="volunteering" multiple onChange={this.handleChange} >
                                 <option value="Ground Operations / Security">Ground Operations / Security</option>
                                 <option value="Pilot Safety Briefing">Pilot Safety Briefing</option>
@@ -99,13 +99,13 @@ export default class EAAYoungEagles extends React.Component {
                             If you are pilot and are interested in participating in the Short Field Landing Contest:
                             </p>
                             
-                            <label for="nnumber">N# to be flown</label>
+                            <label htmlFor="nnumber">N# to be flown</label>
                             <input type="text" name="nnumber" onChange={this.handleChange} />
                             
-                            <label for="makeandmodel">Make and Model</label>
+                            <label htmlFor="makeandmodel">Make and Model</label>
                             <input type="text" name="makeandmodel" onChange={this.handleChange} />
                             
-                            <label for="certificate">Pilot certificate level</label>
+                            <label htmlFor="certificate">Pilot certificate level</label>
                             <select name="certificate" onChange={this.handleChange}>
                                 <option value="Private">Private</option>
                                 <option value="Commercial">Commercial</option>
@@ -113,23 +113,23 @@ export default class EAAYoungEagles extends React.Component {
                             </select>
                             
                             <p>If you are a pilot and are interested in flying Young Eagles:</p>
-                            <label for="ennumber">N# to be flown</label>
+                            <label htmlFor="ennumber">N# to be flown</label>
                             <input type="text" name="ennumber" onChange={this.handleChange} />
                             
-                            <label for="emakeandmodel">Make and Model</label>
+                            <label htmlFor="emakeandmodel">Make and Model</label>
                             <input type="text" name="emakeandmodel" onChange={this.handleChange} />
                             
-                            <label for="ecertificate">Pilot certificate level</label>
+                            <label htmlFor="ecertificate">Pilot certificate level</label>
                             <select name="ecertificate" onChange={this.handleChange}>
                                 <option value="Private">Private</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="ATP">ATP</option>
                             </select>
                             
-                            <label for="eaamembernumber">EAA member #</label>
+                            <label htmlFor="eaamembernumber">EAA member #</label>
                             <input type="text" name="eaamembernumber" onChange={this.handleChange} />
                             
-                            <label for="eaayoutpolicydate">EAA Youth Protection Policy and Program date completed</label>
+                            <label htmlFor="eaayoutpolicydate">EAA Youth Protection Policy and Program date completed</label>
                             <input type="text" name="eaayoutpolicydate" onChange={this.handleChange} />
                             
                             <button type="submit">Send</button>

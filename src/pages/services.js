@@ -77,14 +77,26 @@ export default () => (
                 <h3>Maintenance</h3>
             </div>
             
-            <div style={{ display: 'block', textAlign: 'center', borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem'}}>
-                <div style={{ padding: '1rem'}}>
-                    <img src={withPrefix('eagleaircraftmaintenance.webp')} alt="Beach Banners" style={{ width: '175px' }} />
+            <div className="fboGrid">
+                <div style={{ display: 'block', textAlign: 'center', borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem'}}>
+                    <div style={{ padding: '1rem'}}>
+                        <img src={withPrefix('eagleaircraftmaintenance.webp')} alt="Eagle Aircraft Maintenance" style={{ width: '175px' }} />
+                    </div>
+                    <div style={{ fontSize: '2rem' }}>
+                        <ExtLink uri="https://eagleaircraftmaintenance.com/" name="Eagle Aircraft Maintenance" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} />
+                    </div>
                 </div>
-                <div style={{ fontSize: '2rem' }}>
-                    <ExtLink uri="https://eagleaircraftmaintenance.com/" name="Eagle Aircraft Maintenance" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} />
+                <div style={{ display: 'block', textAlign: 'center', borderRadius: '3px', padding: '1rem', backgroundColor: '#f7f7f7', boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, .3)', marginBottom: '1rem'}}>
+                    <div style={{ padding: '1rem'}}>
+                        <img src={withPrefix('cropped-logo-e1597954437106-3.png')} alt="Corporate Aircraft Maintenance" style={{ width: '175px' }} />
+                    </div>
+                    <div style={{ fontSize: '2rem' }}>
+                        <ExtLink uri="https://jaxcamkcrg.com/" name="Corporate Aircraft Maintenance" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} />
+                    </div>
                 </div>
+
             </div>
+            
 
             <div style={{ witdh: '100%', clear: 'both'}}>
                 <h3>Banner Towing Advertising</h3>

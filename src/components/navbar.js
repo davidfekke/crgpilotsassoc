@@ -6,7 +6,7 @@ import Logo from "./capa.logo.svg"
 import * as styles from "./navbar.module.css"
 
 const menuData = [
-  { title: "Home", link: "" },
+  { title: "Home", link: "/" },
   { title: "Services", link: "/services" },
   { title: "About", link: "/about" },
   { title: "Resources", link: "/resources" },

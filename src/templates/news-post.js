@@ -36,10 +36,10 @@ export default class NewsPost extends React.Component {
                 {HeaderImage && <Img fluid={post.frontmatter.cover_image.childImageSharp.fluid} alt="Feature" />}
                 {/* // {HeaderImage && <Img fluid={HeaderImage} alt="Feature" />} */}
                 <div dangerouslySetInnerHTML={{ __html: post.html }}/>{" "} 
-                {prev && (<Link to={`news/${prev.fields.slug}`} > ←Previous Page </Link>)} 
+                {prev && (<Link to={`/news${prev.fields.slug}`} > ←Previous Page </Link>)} 
                 {" "} 
                 {next && <span> &nbsp; </span>}{" "} 
-                {next && <Link to={`news/${next.fields.slug}`}> Next Page→ </Link>}{" "} 
+                {next && <Link to={`/news${next.fields.slug}`}> Next Page→ </Link>}{" "} 
                 </Article> {" "} 
                 <Footer />
             </Layout>)

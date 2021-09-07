@@ -80,7 +80,7 @@ class Resources extends React.Component {
             }
             console.log(results.data[0].visibility_statute_mi)
             this.setState({ currentweather: results.data[0].flight_category, 
-                altim: results.data[0].altim_in_hg.toFixed(2), 
+                altim: parseFloat(results.data[0].altim_in_hg).toFixed(2), 
                 wind_dir: results.data[0].wind_dir_degrees,
                 wind_speed: results.data[0].wind_speed_kt,
                 gust: results.data[0].wind_gust_kt,
@@ -96,8 +96,8 @@ class Resources extends React.Component {
 
         axios.get('https://avwxproxy.herokuapp.com/taf/kcrg').then(results => {   
             this.setState({ 
-                forecast: results.data.TAF[0].forecast,
-                forecast_raw_text: results.data.TAF[0].raw_text
+                forecast: results.data[0].forecast,
+                forecast_raw_text: results.data[0].raw_text
             });
         });
     }

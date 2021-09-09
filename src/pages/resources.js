@@ -126,37 +126,37 @@ class Resources extends React.Component {
                                                 padding: '0.5rem',
                                                 marginTop: '1rem' }} 
                                 onClick={this.refresh}>Refresh</button><br /><br />
-                        Current Weather at KCRG: <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
-                        Sky Condition: 
+                        <strong>Current Weather at KCRG:</strong> <span style={{ color: `${this.state.avwxcolor}`, fontWeight: 'bold'}}> {this.state.currentweather}</span><br />
+                        <strong>Sky Condition: </strong>
                             <ul>{this.state.sky_condition && this.state.sky_condition.map(cond => {
                                     return (<li key={cond.cloud_base_ft_agl}>{cond.sky_cover} {cond.cloud_base_ft_agl}</li>) 
                                 })}
                             </ul>
-                        Altimeter: {this.state.altim}<br />
-                        Visibility: {this.state.visibility}<br />
-                        Wind Direction: {this.state.wind_dir}<br />
-                        Wind Speed: {this.state.wind_speed}<br />
-                        Wind Gust: {this.state.gust}<br />
-                        Temperature: {this.state.temp} (Celcius)<br />
-                        Dewpoint: {this.state.dew} (Celcius)<br />
-                        Raw Text: {this.state.raw_text}<br /><br />
+                        <strong>Altimeter:</strong> {this.state.altim}<br />
+                        <strong>Visibility:</strong> {this.state.visibility}<br />
+                        <strong>Wind Direction:</strong> {this.state.wind_dir}<br />
+                        <strong>Wind Speed:</strong> {this.state.wind_speed}<br />
+                        <strong>Wind Gust:</strong> {this.state.gust}<br />
+                        <strong>Temperature:</strong> {this.state.temp} (Celcius)<br />
+                        <strong>Dewpoint:</strong> {this.state.dew} (Celcius)<br />
+                        <strong>Raw Text:</strong> {this.state.raw_text}<br /><br />
                             
 
-                        Forcasted weather at KCRG:<br /><br />
+                        <strong>Forcasted weather at KCRG:</strong><br /><br />
                         {this.state.forecast.map(item => {
                             const from_date = moment(item.fcst_time_from).format('YYYY-MM-DD h:mm a');
                             const to_date = moment(item.fcst_time_to).format('YYYY-MM-DD h:mm a');
                             return (<div key={item.fcst_time_from}>
-                                From: {from_date}&nbsp;
-                                to: {to_date} <br />
-                                Sky Condition: <br />
+                                <strong>From:</strong> {from_date}&nbsp;
+                                <strong>to:</strong> {to_date} <br />
+                                <strong>Sky Condition:</strong> <br />
                                 <ul>
                                     {(item.sky_condition && item.sky_condition.map(cond => <li key={cond.cloud_base_ft_agl}>{cond.sky_cover} {cond.cloud_base_ft_agl}</li>))}
                                 </ul>
-                                Wind direction: {item.wind_dir_degrees}<br />
-                                Wind speed: {item.wind_speed_kt}<br />
-                                Wind gust: {item.wind_gust_kt}<br />
-                                Visibility: {parseInt(item.visibility_statute_mi)}<br /> 
+                                <strong>Wind direction:</strong> {item.wind_dir_degrees}<br />
+                                <strong>Wind speed:</strong> {item.wind_speed_kt}<br />
+                                <strong>Wind gust:</strong> {item.wind_gust_kt}<br />
+                                <strong>Visibility:</strong> {parseInt(item.visibility_statute_mi)}<br /> 
                                 <br />
                             </div>)
                         })}

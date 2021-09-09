@@ -84,7 +84,7 @@ export default () => {
                         </div>     
                     </nav> 
                     <div style = {{ textAlign: 'center', fontSize: 'small', paddingTop: '1rem' }}>
-                        <p style = {{ fontWeight: '600' }}>Copyright 2019, Craig Airport Pilots Association</p> 
+                        <p style = {{ fontWeight: '600' }}>Copyright {new Date().getFullYear()}, Craig Airport Pilots Association</p> 
                         <p>Website by <ExtLink uri="https://fek.io" name="David Fekke L.L.C." style={{ color: 'white', textDecoration: 'none'}} /></p>
                     </div> 
                 </div> 

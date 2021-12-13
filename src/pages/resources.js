@@ -56,7 +56,7 @@ class Resources extends React.Component {
     }
 
     refresh() {
-        axios.get('https://avwxproxy.herokuapp.com/metar/kcrg').then(results => {
+        axios.get('https://avwx.fekke.com/metar/kcrg').then(results => {
             let avwxcolor = 'black';
             //console.log(results.data[0]);
             switch (results.data[0].flight_category) {
@@ -149,13 +149,13 @@ class Resources extends React.Component {
                             return (<div key={item.fcst_time_from}>
                                 <strong>From:</strong> {from_date}&nbsp;
                                 <strong>to:</strong> {to_date} <br />
-                                <strong>Sky Condition:</strong> <br />
+                                <strong>Sky Conditions: </strong>
                                 <ul>
                                     {(item.sky_condition && item.sky_condition.map(cond => <li key={cond.cloud_base_ft_agl}>{cond.sky_cover} {cond.cloud_base_ft_agl}</li>))}
                                 </ul>
                                 <strong>Wind direction:</strong> {item.wind_dir_degrees}<br />
                                 <strong>Wind speed:</strong> {item.wind_speed_kt}<br />
-                                <strong>Wind gust:</strong> {item.wind_gust_kt}<br />
+                                {item.wind_gust_kt && <><strong>Wind gust:</strong> {item.wind_gust_kt}<br /></> }
                                 <strong>Visibility:</strong> {parseInt(item.visibility_statute_mi)}<br /> 
                                 <br />
                             </div>)

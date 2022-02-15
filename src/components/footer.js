@@ -81,10 +81,10 @@ export default () => {
                                     <strong> Pages </strong> 
                                 </li> 
                                 <li>
-                                    <Link to = { `about` } > About </Link> 
+                                    <Link to = { `/about` } > About </Link> 
                                 </li> 
                                 <li>
-                                    <Link to = { `terms` } > Terms and Conditions </Link> 
+                                    <Link to = { `/terms` } > Terms and Conditions </Link> 
                                 </li> 
                             </ul>
                         </div>     

@@ -41,6 +41,12 @@ export default () => {
                                 <li>
                                     <a href = "https://www.facebook.com/groups/849967972062524/" target = "_blank" rel = "noopener noreferrer" style = {{ textDecoration: 'none' }} > Facebook </a> 
                                 </li>
+                                <li>
+                                    <a href = "https://craigpilots.locals.com/" target = "_blank" rel = "noopener noreferrer" style = {{ textDecoration: 'none' }} > Craig Pilots Locals </a>
+                                </li>
+                                <li>
+                                    <a href = "https://www.linkedin.com/groups/12242408/" target = "_blank" rel = "noopener noreferrer" style = {{ textDecoration: 'none' }} > Linkedin </a>
+                                </li>
                             </ul> 
                         </div> 
                         <div>

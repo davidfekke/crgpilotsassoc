@@ -9,7 +9,7 @@ import Footer from "../components/footer"
 import ExtLink from "../components/extlink"
 import moment from "moment"
 import { ToastContainer, toast } from 'react-toastify';
-import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa'; 
+import { FaFacebook, FaLinkedin, FaInstagram, FaGalacticRepublic } from 'react-icons/fa'; 
 import 'react-toastify/dist/ReactToastify.css';
 
 class Resources extends React.Component {
@@ -97,7 +97,7 @@ class Resources extends React.Component {
             this.notify();
         });
 
-        axios.get('https://avwxproxy.herokuapp.com/taf/kcrg').then(results => {   
+        axios.get('https://avwx.fekke.com/taf/kcrg').then(results => {   
             this.setState({ 
                 forecast: results.data[0].forecast,
                 forecast_raw_text: results.data[0].raw_text
@@ -214,6 +214,12 @@ class Resources extends React.Component {
                             style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}>
                             <FaInstagram size={ 20 } style={{ padding: '5px', color: 'black' }} /> Instagram
                         </a>
+                        <a href="craigpilots.locals.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style= {{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}>
+                                <FaGalacticRepublic size={ 20 } style={{ padding: '5px', color: 'black' }} /> Craig Pilots Locals
+                            </a>
                         </p>
                     </div>
                     

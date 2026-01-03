@@ -8,8 +8,9 @@ fueled you can grab a quick nosh before heading home.
 
 ## CJ Cannon’s (B, L, D)
 [KVRB](https://www.airnav.com/airport/KVRB) Vero Beach Regional Airport
-Thirty years of airport restaurant service with a smile. Come get your
-dose of Southern comfort food in a unique retro decor.
+Thirty years of airport restaurant service with a smile. 
+
+Come get your dose of Southern comfort food in a unique retro decor.
 
 ## High Jackers (L, D)
 [KFIN](https://www.airnav.com/airport/KFIN) Flagler Executive Airport

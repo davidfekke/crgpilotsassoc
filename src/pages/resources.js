@@ -86,7 +86,9 @@ const ResourcesComponent = () => {
     }
 
     useEffect(() => {
-        refresh();
+        if (typeof window !== 'undefined') {
+            refresh();
+        }
     }, []);
 
     return (<Layout>
@@ -143,7 +145,7 @@ const ResourcesComponent = () => {
                             <br />
                         </div>)
                     })}
-                    Raw Text: {this.state.forecast_raw_text}<br /><br />
+                    Raw Text: {weather.forecast_raw_text}<br /><br />
                 </div>
 
                 <div className="resourceBlock" >
